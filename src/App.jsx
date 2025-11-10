@@ -102,19 +102,18 @@ export default function App() {
     <>
 
       {/* hero section */}
-      <section className=' bg-navyBlue flex flex-col 
-      md:grid md:grid-cols-2 py-24 px-4 sm:px-8 md:px-12 lg:px-16 gap-4 m-0 '>
+      <section className={`bg-navyBlue flex flex-col 
+      md:grid md:grid-cols-2 ${styles.paddingY} ${styles.paddingX} 
+      gap-4 m-0`}>
         
         {/* hero content */}
         <div className='w-full flex flex-col justify-center max-w-xl' >
-          <h1 className='text-white font-bold text-3xl
-          lg:text-4xl xl:text-5xl mb-4 '>
+          <h1 className={`text-white ${styles.heading1}`}>
             Professional Healthcare, <span className='text-cyan'>Delivered</span> to You</h1>
-          <p className='text-white text-sm md:text-base lg:text-lg mb-4 '>Comprehensive mobile lab testing and diagnostic services — right at your doorstep.</p>
-          <button className='text-white bg-cyan rounded-full 
-          py-3 px-3 font-bold shadow mb-4 self-start
-          hover:opacity-75 transition-all duration-150
-          text-xs md:text-sm lg:text-base'>
+          <p className={`text-white ${styles.paragraph} mb-4`}>
+            Comprehensive mobile lab testing and diagnostic services — right at your doorstep.
+          </p>
+          <button className={` ${styles.primaryButton} self-start mb-4`}>
             Book Your Test Now</button>
         </div>
 
@@ -127,71 +126,49 @@ export default function App() {
       </section>
 
       {/* why choose us section */}
-      <section className='bg-white flex flex-col py-24 px-4 sm:px-8 
-      md:px-12 lg:px-16 justify-center text-center text-deepBlue'>
+      <section className={`bg-white flex flex-col ${styles.paddingX} ${styles.paddingY} 
+      justify-center text-center text-deepBlue mb-0`}>
         
         <div className='mb-4'>
-          <h2 className='text-2xl lg:text-3xl xl:text-4xl
-          font-bold mb-4'>WHY CHOOSE US</h2>
-          <p className='text-sm md:text-base lg:text-lg 
-          font-medium mb-4'>Reliable diagnostics. Personalised care. Professional expertise.</p>
+          <h2 className={`${styles.heading2}`}>WHY CHOOSE US</h2>
+          <p className={` ${styles.paragraph}`}>Reliable diagnostics. Personalised care. Professional expertise.</p>
         </div>
 
         {/* cards group */}
         <div className='flex flex-wrap justify-evenly gap-6'>
-          <article className='flex flex-col items-center 
-          text-center border-2 border-skyBlue 
-          rounded-2xl shadow-xl p-8
-          flex-1 min-w-[280px] max-w-[350px]  '>
+          <article className={`${styles.whyCard}`}>
             <img src={tickIcon} alt="checkmark" 
             className=' mb-4 w-16 h-16' />
-            <h3 className='text-xl lg:text-2xl 
-          font-bold mb-2 mt-0 text-deepBlue'>Mobile Service</h3>
-            <p className='text-sm md:text-base lg:text-lg text-gray-700
-          font-regular '>We come to your location</p>
+            <h3 className={`${styles.heading3} mt-0 `}>Mobile Service</h3>
+            <p className={`${styles.paragraph} mb-0 `}>We come to your location</p>
           </article>
 
-          <article className='flex flex-col items-center 
-          text-center border-2 border-skyBlue 
-          rounded-2xl shadow-xl p-8
-          flex-1 min-w-[280px] max-w-[350px]'>
+          <article className={`${styles.whyCard}`}>
             <img src={tickIcon} alt="checkmark"
             className='mb-4 w-16 h-16' />
-            <h3 className='text-xl lg:text-2xl 
-          font-bold mb-2 mt-0 text-deepBlue'>Professional Team</h3>
-            <p className='text-sm md:text-base lg:text-lg text-gray-700
-          font-regular '>Certified healthcare experts</p>
+            <h3 className={`${styles.heading3} mt-0 `}>Professional Team</h3>
+            <p className={`${styles.paragraph} mb-0 `}>Certified healthcare experts</p>
           </article>
 
-          <article className='flex flex-col items-center 
-          text-center border-2 border-skyBlue 
-          rounded-2xl shadow-xl p-8
-          flex-1 min-w-[280px] max-w-[350px]'>
+          <article className={`${styles.whyCard}`}>
             <img src={tickIcon} alt="checkmark"
             className='mb-4 w-16 h-16' />
-            <h3 className='text-xl lg:text-2xl 
-          font-bold mb-2 mt-0 text-deepBlue'>Fast Results</h3>
-            <p className='text-sm md:text-base lg:text-lg text-gray-700
-          font-regular'>Quick turnaround time</p>
+            <h3 className={`${styles.heading3} mt-0 `}>Fast Results</h3>
+            <p className={`${styles.paragraph} mb-0 `}>Quick turnaround time</p>
           </article>
         </div>
       </section>
 
       {/* services section */}
-      <section className='bg-white flex flex-col py-24 px-4 
-      sm:px-8 md:px-12 lg:px-16 justify-center text-center 
-      '>
+      <section className={`bg-white flex flex-col ${styles.paddingY} ${styles.paddingX}
+      justify-center text-center`}>
+        
         <div className='text-center mb-4 '>
-          <h2 className='text-2xl lg:text-3xl xl:text-4xl
-          font-bold mb-4 text-deepBlue'>OUR TESTING SERVICES</h2>
-          <p className='max-w-5xl m-auto justify-center text-sm md:text-base lg:text-lg text-gray-700
-          font-regular '>Whether you need routine screenings or specialized diagnostics, we bring comprehensive mobile lab testing directly to your location with certified professionals and state-of-the-art equipment.</p>
+          <h2 className={`${styles.heading2}`}>OUR TESTING SERVICES</h2>
+          <p className={`max-w-5xl m-auto justify-center ${styles.paragraph} mb-4`}>Whether you need routine screenings or specialized diagnostics, we bring comprehensive mobile lab testing directly to your location with certified professionals and state-of-the-art equipment.</p>
         </div>
 
         {/* card components */}
-        {/* flex flex-col items-start 
-          text-start border-2 border-skyBlue 
-          rounded-2xl shadow-xl p-4 */}
         <div className='grid grid-cols-1 md:grid-cols-2 
         lg:grid-cols-3 gap-6 '>
           
