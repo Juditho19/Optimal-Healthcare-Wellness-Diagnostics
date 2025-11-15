@@ -22,6 +22,7 @@ body{
     --skyBlue: #90E0EF;
     --cyan: #00B4D8;
     --deepBlue: #023047;
+    --pGrey: text-gray-700;
 }
 p{
    color:  text-gray-700;
