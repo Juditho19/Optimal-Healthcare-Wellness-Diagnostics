@@ -21,6 +21,12 @@ import computerIcon from './assets/computer.svg';
 import tick from './assets/tick.svg';
 import up from './assets/up-icon.svg';
 
+// footer section
+import clockIcon from './assets/clockIcon.svg';
+import mailIcon from './assets/mailIcon.svg';
+import locationIcon from './assets/locationIcon.svg';
+import phonecallIcon from './assets/phonecallIcon.svg';
+
 import styles from './components/styles.js';
 
 export default function App() {
@@ -414,14 +420,97 @@ export default function App() {
           </div>
 
           <div>
-            <h3>CONTACT US</h3>
+            {/* cotact us */}
+            <div>
+              <h3>CONTACT US</h3>
 
-            <ul>
-              <li></li>
-            </ul>
+              <ul>
+                <li>
+                  <img src={clockIcon} alt="" />
+                  [Phone Number]
+                </li>
+
+                <li>
+                  <img src={mailIcon} alt="" />
+                  [Email Address]
+                </li>
+
+                <li>
+                  <img src={locationIcon} alt="" />
+                  [Business Address]
+                </li>
+
+                <li>
+                  <img src={phonecallIcon} alt="" />
+                  Hours: 8:30am - 4:30pm
+                </li>
+              </ul>
+            </div>
+
+            {/* QUICK LINKS */}
+            <div>
+              <h3>QUICK LINKS</h3>
+
+              <ul>
+                <li>
+                  About Us
+                </li>
+
+                <li>
+                  Our Services
+                </li>
+
+                <li>
+                  Privacy Policy
+                </li>
+
+                <li>
+                  Terms & Conditions
+                </li>
+              </ul>
+            </div>
+
+            {/* Follow Us */}
+            <div>
+              <h3>QUICK LINKS</h3>
+
+              <ul>
+                <li>
+                  Facebook  
+                </li>
+
+                <li>
+                  Instagram  
+                </li>
+
+                <li>
+                  Twitter
+                </li>
+
+                <li>
+                  LinkedIn
+                </li>
+              </ul>
+            </div>
+
+            {/* PARTNERS */}
+            <div>
+              <h3>QUICK LINKS</h3>
+
+              <ul>
+                <li>
+                  [Partner logos section]  
+                </li>
+              </ul>
+            </div>
+
           </div>
+
+          <p>© 2025 Optimal Healthcare Wellness & Diagnostics. All rights reserved.</p>
+
         </div>
       </section>
+
 
 
 
