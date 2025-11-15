@@ -146,7 +146,7 @@ export default function App() {
       justify-center text-center text-deepBlue mb-0`}>
 
         <div className='mb-4'>
-          <h2 className={`${styles.heading2}`}>WHY CHOOSE US</h2>
+          <h2 className={`${styles.heading2} text-navyBlue`}>WHY CHOOSE US</h2>
           <p className={` ${styles.paragraph}`}>Reliable diagnostics. Personalised care. Professional expertise.</p>
         </div>
 
@@ -155,21 +155,21 @@ export default function App() {
           <article className={`${styles.Card} min-w-[280px] max-w-[350px]`}>
             <img src={tickIcon} alt="checkmark"
               className=' mb-4 w-16 h-16' />
-            <h3 className={`${styles.heading3} mt-0 `}>Mobile Service</h3>
+            <h3 className={`${styles.heading3} text-navyBlue mt-0 `}>Mobile Service</h3>
             <p className={`${styles.paragraph} mb-0 `}>We come to your location</p>
           </article>
 
           <article className={`${styles.Card} min-w-[280px] max-w-[350px]`}>
             <img src={tickIcon} alt="checkmark"
               className='mb-4 w-16 h-16' />
-            <h3 className={`${styles.heading3} mt-0 `}>Professional Team</h3>
+            <h3 className={`${styles.heading3} text-navyBlue mt-0 `}>Professional Team</h3>
             <p className={`${styles.paragraph} mb-0 `}>Certified healthcare experts</p>
           </article>
 
           <article className={`${styles.Card} min-w-[280px] max-w-[350px]`}>
             <img src={tickIcon} alt="checkmark"
               className='mb-4 w-16 h-16' />
-            <h3 className={`${styles.heading3} mt-0 `}>Fast Results</h3>
+            <h3 className={`${styles.heading3} text-navyBlue  mt-0 `}>Fast Results</h3>
             <p className={`${styles.paragraph} mb-0 `}>Quick turnaround time</p>
           </article>
         </div>
@@ -180,7 +180,7 @@ export default function App() {
       justify-center text-center`}>
 
         <div className='text-center mb-4 '>
-          <h2 className={`${styles.heading2}`}>OUR TESTING SERVICES</h2>
+          <h2 className={`${styles.heading2} text-navyBlue`}>OUR TESTING SERVICES</h2>
           <p className={`max-w-5xl m-auto justify-center ${styles.paragraph} mb-4`}>Whether you need routine screenings or specialized diagnostics, we bring comprehensive mobile lab testing directly to your location with certified professionals and state-of-the-art equipment.</p>
         </div>
 
@@ -198,7 +198,7 @@ export default function App() {
                   width={40} height={40}
                   className='mb-1.5' />
                 <h3 className='text-xl lg:text-2xl 
-                  font-bold mb-1.5 mt-0 text-deepBlue'>{service.title}</h3>
+                  font-bold mb-1.5 mt-0 text-navyBlue'>{service.title}</h3>
                 <p className=' mb-2 '>{service.description}</p>
               </div>
 
@@ -233,7 +233,7 @@ export default function App() {
       justify-center text-center text-deepBlue`}>
         {/* header */}
         <div className='mb-12 max-w-4xl mx-auto'>
-          <h2 className={`${styles.heading2} mb-4`}>Sample Collection Types We Handle</h2>
+          <h2 className={`${styles.heading2} text-navyBlue mb-4`}>Sample Collection Types We Handle</h2>
           <p className={` ${styles.paragraph} text-gray-700`}>Our professionals are trained to collect a wide range of specimen types with precision and care.</p>
         </div>
 
@@ -317,7 +317,7 @@ export default function App() {
       justify-center text-center text-deepBlue `}>
         {/* header */}
         <div className='mb-12 max-w-4xl mx-auto'>
-          <h2 className={`${styles.heading2} mb-4`}>HOW IT WORKS</h2>
+          <h2 className={`${styles.heading2} text-navyBlue mb-4`}>HOW IT WORKS</h2>
           <p className={` ${styles.paragraph} text-gray-700`}>Simple, convenient, and professional</p>
         </div>
 
@@ -408,110 +408,109 @@ export default function App() {
       justify-center text-center`}>
         <h2 className={`${styles.heading2} mb-4`}>Book Your Test</h2>
         <h3  className={`${styles.heading3}`}>Fast, Simple, and Secure</h3>
+        
+        <form action="">
 
+          <div>
+            <label htmlFor=""></label>
+            <textarea name="" id=""></textarea>
+          </div>
+        </form>
       </section> */}
 
       {/* footer */}
-      <section className={`bg-deepBlue flex flex-col ${styles.paddingX} ${styles.paddingY} justify-center items-center text-center text-white`}>
-        <div>
-          <div>
-            <h2>Optimal Healthcare Wellness & Diagnostics</h2>
-            <p>Your health & wellness matters...</p>
+      
+      {/* footer */}
+      <section className={`bg-deepBlue flex flex-col ${styles.paddingX} ${styles.paddingY} justify-center text-white`}>
+        
+        {/* header */}
+        <div className='mb-8 text-center'>
+          <h2 className='text-2xl md:text-3xl font-bold text-skyBlue mb-2'>Optimal Healthcare Wellness & Diagnostics</h2>
+          <p className='text-sm md:text-base text-white/80 italic'>Your health & wellness matters...</p>
+        </div>
+
+        {/* footer content - flex layout */}
+        <div className='flex flex-row flex-wrap lg:flex-nowrap justify-between gap-8 lg:gap-12 mb-8 max-w-7xl mx-auto w-full text-left md:text-left'>
+
+          {/* CONTACT US */}
+          <div className='flex-1 min-w-[200px]'>
+            <h3 className='text-lg font-bold mb-4 text-skyBlue uppercase tracking-wide'>CONTACT US</h3>
+            <ul className='space-y-3'>
+              <li className='flex items-start gap-2 text-sm md:text-base'>
+                <img src={phonecallIcon} alt="" className='w-5 h-5 mt-0.5 flex-shrink-0' />
+                <span>[Phone Number]</span>
+              </li>
+              <li className='flex items-start gap-2 text-sm md:text-base'>
+                <img src={mailIcon} alt="" className='w-5 h-5 mt-0.5 flex-shrink-0' />
+                <span>[Email Address]</span>
+              </li>
+              <li className='flex items-start gap-2 text-sm md:text-base'>
+                <img src={locationIcon} alt="" className='w-5 h-5 mt-0.5 flex-shrink-0' />
+                <span>[Business Address]</span>
+              </li>
+              <li className='flex items-start gap-2 text-sm md:text-base'>
+                <img src={clockIcon} alt="" className='w-5 h-5 mt-0.5 flex-shrink-0' />
+                <span>Hours: 8:30am - 4:30pm</span>
+              </li>
+            </ul>
           </div>
 
-          <div>
-            {/* cotact us */}
-            <div>
-              <h3>CONTACT US</h3>
-
-              <ul>
-                <li>
-                  <img src={clockIcon} alt="" />
-                  [Phone Number]
-                </li>
-
-                <li>
-                  <img src={mailIcon} alt="" />
-                  [Email Address]
-                </li>
-
-                <li>
-                  <img src={locationIcon} alt="" />
-                  [Business Address]
-                </li>
-
-                <li>
-                  <img src={phonecallIcon} alt="" />
-                  Hours: 8:30am - 4:30pm
-                </li>
-              </ul>
-            </div>
-
-            {/* QUICK LINKS */}
-            <div>
-              <h3>QUICK LINKS</h3>
-
-              <ul>
-                <li>
-                  About Us
-                </li>
-
-                <li>
-                  Our Services
-                </li>
-
-                <li>
-                  Privacy Policy
-                </li>
-
-                <li>
-                  Terms & Conditions
-                </li>
-              </ul>
-            </div>
-
-            {/* Follow Us */}
-            <div>
-              <h3>QUICK LINKS</h3>
-
-              <ul>
-                <li>
-                  Facebook  
-                </li>
-
-                <li>
-                  Instagram  
-                </li>
-
-                <li>
-                  Twitter
-                </li>
-
-                <li>
-                  LinkedIn
-                </li>
-              </ul>
-            </div>
-
-            {/* PARTNERS */}
-            <div>
-              <h3>QUICK LINKS</h3>
-
-              <ul>
-                <li>
-                  [Partner logos section]  
-                </li>
-              </ul>
-            </div>
-
+          {/* QUICK LINKS */}
+          <div className='flex-1 min-w-[150px]'>
+            <h3 className='text-lg font-bold mb-4 text-skyBlue uppercase tracking-wide'>Quick Link</h3>
+            <ul className='space-y-3'>
+              <li className='text-sm md:text-base hover:text-skyBlue cursor-pointer transition-colors'>
+                About Us
+              </li>
+              <li className='text-sm md:text-base hover:text-skyBlue cursor-pointer transition-colors'>
+                Our Services
+              </li>
+              <li className='text-sm md:text-base hover:text-skyBlue cursor-pointer transition-colors'>
+                Privacy Policy
+              </li>
+              <li className='text-sm md:text-base hover:text-skyBlue cursor-pointer transition-colors'>
+                Terms & Conditions
+              </li>
+            </ul>
           </div>
 
-          <p>© 2025 Optimal Healthcare Wellness & Diagnostics. All rights reserved.</p>
+          {/* FOLLOW US */}
+          <div className='flex-1 min-w-[150px]'>
+            <h3 className='text-lg font-bold mb-4 text-skyBlue uppercase tracking-wide'>Follow Us</h3>
+            <ul className='space-y-3'>
+              <li className='text-sm md:text-base hover:text-skyBlue cursor-pointer transition-colors'>
+                Facebook
+              </li>
+              <li className='text-sm md:text-base hover:text-skyBlue cursor-pointer transition-colors'>
+                Instagram
+              </li>
+              <li className='text-sm md:text-base hover:text-skyBlue cursor-pointer transition-colors'>
+                Twitter
+              </li>
+              <li className='text-sm md:text-base hover:text-skyBlue cursor-pointer transition-colors'>
+                LinkedIn
+              </li>
+            </ul>
+          </div>
+
+          {/* PARTNERS */}
+          <div className='flex-1 min-w-[150px]'>
+            <h3 className='text-lg font-bold mb-4 text-skyBlue uppercase tracking-wide'>PARTNERS</h3>
+            <div className='text-sm md:text-base'>
+              [Partner logos section]
+            </div>
+          </div>
 
         </div>
+
+        {/* copyright */}
+        <div className='text-center pt-6 border-t border-white/20'>
+          <p className='text-xs md:text-sm text-white/70 italic'>
+            © 2025 Optimal Healthcare Wellness & Diagnostics. All rights reserved.
+          </p>
+        </div>
+
       </section>
-
-
 
 
     </>
