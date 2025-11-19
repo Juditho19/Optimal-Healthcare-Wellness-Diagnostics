@@ -1,6 +1,9 @@
 import './index.css'
 
-import heroImage from './assets/hero-image.svg';
+// hero section
+import heroImageDesktop from './assets/heroImageDesktop.svg';
+import heroImageMobile from './assets/heroImageMobile.svg';
+
 import tickIcon from './assets/tick-icon.svg';
 import nayBlueTick from './assets/nayBlue-tick.svg';
 
@@ -115,31 +118,94 @@ export default function App() {
 
   return (
     <>
+      {/* hero section */}
+      <section className='bg-navyBlue py-20'>
+  
+        <div className='px-16 flex flex-col md:flex-row items-center gap-12 max-w-7xl mx-auto'>
+          
+          {/* hero text */}
+          {/* Text - slides in smoothly from left */}
+          <div className='w-full md:w-1/2 flex flex-col justify-center
+          motion-preset-slide-right motion-duration-700' >
+            <h1 className={`text-white ${styles.heading1} mb-4`}>
+              Professional Healthcare, <span className='text-cyan'>Delivered</span> to You
+            </h1>
+            <p className={`text-white ${styles.paragraph} mb-6`}>
+              Comprehensive mobile lab testing and diagnostic services — right at your doorstep.
+            </p>
+            <button className={`${styles.primaryButton} self-start`}>
+              Book Your Test Now
+            </button>
+          </div>
+
+          {/* hero image */}
+          {/* Image - fades in with delay */}
+          <div className='w-full md:w-1/2
+          motion-preset-fade motion-duration-1000 motion-delay-300'>
+            
+
+            <picture>
+              <source media="(min-width: 770px)" srcSet={heroImageDesktop} />
+              <img 
+                src={heroImageMobile}
+                className='w-full rounded-2xl'
+                alt="Healthcare professional providing medical service to patient" 
+              />
+            </picture>
+          </div>
+        </div>
+        
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       {/* hero section */}
-      <section className={`bg-navyBlue flex flex-col 
-      md:grid md:grid-cols-2 ${styles.paddingY} ${styles.paddingX} 
-      gap-4 m-0`}>
-
-
-        {/* hero content */}
-        <div className='w-full flex flex-col justify-center max-w-xl' >
-          <h1 className={`text-white ${styles.heading1}`}>
-            Professional Healthcare, <span className='text-cyan'>Delivered</span> to You</h1>
-          <p className={` text-white  ${styles.paragraph} mb-4`}>
+      {/* <section className={`bg-navyBlue flex flex-col md:flex-row 
+        items-center gap-8 ${styles.section}`}> */}
+        
+        {/* hero text */}
+        {/* <div className='w-full md:w-1/2 flex flex-col justify-center '>
+          <h1 className='text-white font-bold text-3xl lg:text-4xl xl:text-5xl mb-4'>
+            Professional Healthcare, <span className='text-cyan'>Delivered</span> to You
+          </h1>
+          
+          <p className='text-white text-base mb-6'>
             Comprehensive mobile lab testing and diagnostic services — right at your doorstep.
           </p>
-          <button className={` ${styles.primaryButton} self-start mb-4`}>
-            Book Your Test Now</button>
-        </div>
+          
+          <button className='text-white bg-cyan rounded-full py-3 px-6 font-bold shadow hover:opacity-75 transition-all duration-150 self-start'>
+            Book Your Test Now
+          </button>
+        </div> */}
 
         {/* hero image */}
-        <div className='w-full flex items-center justify-center h-full'>
-          <img src={heroImage}
-            className='w-full rounded-2xl '
-            alt="Healthcare professional providing medical service to patient" />
+        {/* <div className='w-full md:w-1/2 flex items-center justify-center'>
+          <img 
+            src={heroImage} 
+            className='w-full max-w-md rounded-2xl'
+            alt="Healthcare professional providing medical service to patient" 
+          />
         </div>
-      </section>
+        
+      </section> */}
 
       {/* why choose us section */}
       <section className={`bg-white flex flex-col ${styles.paddingX} ${styles.paddingY} 
@@ -420,7 +486,6 @@ export default function App() {
 
       {/* footer */}
       
-      {/* footer */}
       <section className={`bg-deepBlue flex flex-col ${styles.paddingX} ${styles.paddingY} justify-center text-white`}>
         
         {/* header */}
@@ -431,7 +496,7 @@ export default function App() {
 
         {/* footer content - flex layout */}
         <div className='flex flex-row flex-wrap lg:flex-nowrap justify-between gap-8 lg:gap-12 mb-8 max-w-7xl mx-auto w-full text-left md:text-left'>
-
+        {/*  flex-col md:flex-row md:flex-wrap */}
           {/* CONTACT US */}
           <div className='flex-1 min-w-[200px]'>
             <h3 className='text-lg font-bold mb-4 text-skyBlue uppercase tracking-wide'>CONTACT US</h3>
