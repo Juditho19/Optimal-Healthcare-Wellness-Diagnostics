@@ -1,4 +1,6 @@
 import './index.css'
+import AnimateOnScroll from './components/AnimateOnScroll';
+
 
 // hero section
 import heroImageDesktop from './assets/heroImageDesktop.svg';
@@ -119,9 +121,13 @@ export default function App() {
   return (
     <>
       {/* hero section */}
-      <section className='bg-navyBlue py-20'>
+      <section className={`bg-navyBlue py-20 ${styles.paddingY}`}>
+        
   
         <div className='px-16 flex flex-col md:flex-row items-center gap-12 max-w-7xl mx-auto'>
+          {/* {`${styles.paddingX} flex flex-col md:flex-row items-center gap-12 max-w-7xl mx-auto`} */}
+
+          {/* sm:px-8 md:px-16 mx-auto */}
           
           {/* hero text */}
           {/* Text - slides in smoothly from left */}
@@ -160,23 +166,6 @@ export default function App() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       {/* hero section */}
       {/* <section className={`bg-navyBlue flex flex-col md:flex-row 
         items-center gap-8 ${styles.section}`}> */}
@@ -208,38 +197,77 @@ export default function App() {
       </section> */}
 
       {/* why choose us section */}
-      <section className={`bg-white flex flex-col ${styles.paddingX} ${styles.paddingY} 
-      justify-center text-center text-deepBlue mb-0`}>
+      <section className={`bg-white py-20`}>
 
-        <div className='mb-4'>
-          <h2 className={`${styles.heading2} text-navyBlue`}>WHY CHOOSE US</h2>
-          <p className={` ${styles.paragraph}`}>Reliable diagnostics. Personalised care. Professional expertise.</p>
-        </div>
+        <div className='flex flex-col justify-center text-center 
+        text-deepBlue mb-0 px-16 mx-auto'>
 
-        {/* cards group */}
-        <div className='flex flex-wrap justify-evenly gap-6'>
-          <article className={`${styles.Card} min-w-[280px] max-w-[350px]`}>
-            <img src={tickIcon} alt="checkmark"
-              className=' mb-4 w-16 h-16' />
-            <h3 className={`${styles.heading3} text-navyBlue mt-0 `}>Mobile Service</h3>
-            <p className={`${styles.paragraph} mb-0 `}>We come to your location</p>
-          </article>
+        {/* scroll animation */}
 
-          <article className={`${styles.Card} min-w-[280px] max-w-[350px]`}>
-            <img src={tickIcon} alt="checkmark"
-              className='mb-4 w-16 h-16' />
-            <h3 className={`${styles.heading3} text-navyBlue mt-0 `}>Professional Team</h3>
-            <p className={`${styles.paragraph} mb-0 `}>Certified healthcare experts</p>
-          </article>
+          <AnimateOnScroll className='motion-preset-slide-up motion-duration-700'>
+            {/* heading - fades up */}
+            <div className='mb-12
+            motion-preset-slide-up motion-duration-700 motion-scroll'>
+              <h2 className={`${styles.heading2} text-navyBlue`}>WHY CHOOSE US</h2>
+              <p className={` ${styles.paragraph}`}>Reliable diagnostics. Personalised care. Professional expertise.</p>
+            </div>
+          </AnimateOnScroll> 
+          
 
-          <article className={`${styles.Card} min-w-[280px] max-w-[350px]`}>
-            <img src={tickIcon} alt="checkmark"
-              className='mb-4 w-16 h-16' />
-            <h3 className={`${styles.heading3} text-navyBlue  mt-0 `}>Fast Results</h3>
-            <p className={`${styles.paragraph} mb-0 `}>Quick turnaround time</p>
-          </article>
+          {/* cards group */}
+          <div className='flex flex-wrap justify-evenly gap-6 '>
+
+            <AnimateOnScroll className='motion-preset-slide-up motion-duration-700 motion-delay-200'>
+              <article className={`${styles.Card} min-w-[280px] max-w-[350px]`}>
+                <img src={tickIcon} alt="checkmark"
+                  className=' mb-4 w-16 h-16' />
+                <h3 className={`${styles.heading3} text-navyBlue mt-0 `}>Mobile Service</h3>
+                <p className={`${styles.paragraph} mb-0 `}>We come to your location</p>
+              </article>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll className='motion-preset-slide-up motion-duration-700 motion-delay-200'>
+             <article className={`${styles.Card} min-w-[280px] max-w-[350px]`}>
+                <img src={tickIcon} alt="checkmark"
+                  className='mb-4 w-16 h-16' />
+                <h3 className={`${styles.heading3} text-navyBlue mt-0 `}>Professional Team</h3>
+                <p className={`${styles.paragraph} mb-0 `}>Certified healthcare experts</p>
+              </article>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll className='motion-preset-slide-up motion-duration-700 motion-delay-200'>
+             <article className={`${styles.Card} min-w-[280px] max-w-[350px]`}>
+                <img src={tickIcon} alt="checkmark"
+                  className='mb-4 w-16 h-16' />
+                <h3 className={`${styles.heading3} text-navyBlue  mt-0 `}>Fast Results</h3>
+                <p className={`${styles.paragraph} mb-0 `}>Quick turnaround time</p>
+              </article>
+            </AnimateOnScroll>
+            
+
+            
+          </div>
         </div>
       </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       {/* services section */}
       <section className={`bg-white flex flex-col ${styles.paddingY} ${styles.paddingX}

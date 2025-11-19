@@ -1,7 +1,7 @@
 const styles = {
   // Layout
   paddingX: "px-4 sm:px-8 md:px-12 lg:px-16",
-  paddingY: "py-24 ",
+  paddingY: "py-20",
 
   
   // Text styles
@@ -20,7 +20,7 @@ const styles = {
   Card: "flex flex-col items-center text-center border-2 border-skyBlue rounded-2xl shadow-xl p-8 flex-1 ",
   
   // Sections
-  section: "px-4 sm:px-8 md:px-12 lg:px-16 py-12 md:py-24",
+  section: "px-4 sm:px-8 md:px-12 lg:px-16 py-24",
   
  
 };
