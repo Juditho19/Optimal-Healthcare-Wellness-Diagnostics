@@ -124,7 +124,7 @@ export default function App() {
   return (
     <>
       {/* hero section */}
-      <section className={`bg-navyBlue py-20 ${styles.paddingY}`}>
+      <section className={`bg-navyBlue ${styles.paddingY}`}>
         
   
         <div className={`${styles.paddingX} flex flex-col md:flex-row items-center gap-12 max-w-7xl mx-auto`}>
@@ -259,6 +259,7 @@ export default function App() {
               <p className={`max-w-5xl m-auto justify-center ${styles.paragraph} mb-4`}>Whether you need routine screenings or specialized diagnostics, we bring comprehensive mobile lab testing directly to your location with certified professionals and state-of-the-art equipment.</p>
             </div>
           </AnimateOnScroll>
+          
 
           
 
@@ -285,168 +286,205 @@ export default function App() {
       </section>
 
 
+
+
+
+
+
+
+
+
+            
+
       {/* samples section */}
-      <section className={`bg-white flex flex-col ${styles.paddingX} ${styles.paddingY} 
-      justify-center text-center text-deepBlue`}>
-        {/* header */}
-        <div className='mb-12 max-w-4xl mx-auto'>
-          <h2 className={`${styles.heading2} text-navyBlue mb-4`}>Sample Collection Types We Handle</h2>
-          <p className={` ${styles.paragraph} text-gray-700`}>Our professionals are trained to collect a wide range of specimen types with precision and care.</p>
-        </div>
+      <section className={`bg-white ${styles.paddingY} `}>
 
-        {/* Content: List + Image */}
-        <div className='flex flex-col md:flex-row items-center 
-        md:items-start justify-center gap-8 md:gap-16  
-        max-w-6xl mx-auto '>
-
-          {/* List */}
-          <div className='flex flex-col gap-4 text-left flex-1'>
-            <div className='flex flex-row gap-3 items-start'>
-              <img src={nayBlueTick} alt="" className="w-5 h-5 mt-0.5 flex-shrink-0" />
-              <p className='text-base md:text-lg'>
-                <span className='font-bold text-navyBlue'>SST (Serum Separator Tube):</span> Most common blood tests
-              </p>
+        <div className={`flex flex-col justify-center text-center 
+          text-deepBlue max-w-7xl mx-auto ${styles.paddingX} `}>
+          {/* header */}
+          <AnimateOnScroll className='motion-preset-slide-up motion-duration-700'>
+            <div className='mb-12  mx-auto'>
+              <h2 className={`${styles.heading2} text-navyBlue mb-4`}>Sample Collection Types We Handle</h2>
+              <p className={` ${styles.paragraph} text-gray-700`}>Our professionals are trained to collect a wide range of specimen types with precision and care.</p>
             </div>
+          </AnimateOnScroll>
 
-            <div className='flex flex-row gap-3 items-start'>
-              <img src={nayBlueTick} alt="" className="w-5 h-5 mt-0.5 flex-shrink-0" />
-              <p className='text-base md:text-lg'>
-                <span className='font-bold text-navyBlue'>EDTA:</span> Haematology and blood count analysis
-              </p>
-            </div>
 
-            <div className='flex flex-row gap-3 items-start'>
-              <img src={nayBlueTick} alt="" className="w-5 h-5 mt-0.5 flex-shrink-0" />
-              <p className='text-base md:text-lg'>
-                <span className='font-bold text-navyBlue'>Citrate:</span> Coagulation studies
-              </p>
-            </div>
+          {/* Content: List + Image */}
+          <div className='flex flex-col md:flex-row items-center 
+          md:items-start justify-between gap-8 md:gap-16 w-full'>
 
-            <div className='flex flex-row gap-3 items-start'>
-              <img src={nayBlueTick} alt="" className="w-5 h-5 mt-0.5 flex-shrink-0" />
-              <p className='text-base md:text-lg'>
-                <span className='font-bold text-navyBlue'>Urine (Random/24-hour):</span> Metabolic and renal tests
-              </p>
-            </div>
+            {/* List */}
+            <AnimateOnScroll className='motion-preset-slide-up motion-duration-700 motion-delay-200'>
+              <div className='flex flex-col gap-4 text-left flex-1'>
+                <div className='flex flex-row gap-3 items-start'>
+                  <img src={nayBlueTick} alt="" className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                  <p className='text-base md:text-lg'>
+                    <span className='font-bold text-navyBlue'>SST (Serum Separator Tube):</span> Most common blood tests
+                  </p>
+                </div>
 
-            <div className='flex flex-row gap-3 items-start'>
-              <img src={nayBlueTick} alt="" className="w-5 h-5 mt-0.5 flex-shrink-0" />
-              <p className='text-base md:text-lg'>
-                <span className='font-bold text-navyBlue'>Stool:</span> Gastrointestinal and microbiology
-              </p>
-            </div>
+                <div className='flex flex-row gap-3 items-start'>
+                  <img src={nayBlueTick} alt="" className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                  <p className='text-base md:text-lg'>
+                    <span className='font-bold text-navyBlue'>EDTA:</span> Haematology and blood count analysis
+                  </p>
+                </div>
 
-            <div className='flex flex-row gap-3 items-start'>
-              <img src={nayBlueTick} alt="" className="w-5 h-5 mt-0.5 flex-shrink-0" />
-              <p className='text-base md:text-lg'>
-                <span className='font-bold text-navyBlue'>CSF (Plain Bottle):</span> Neurological studies
-              </p>
-            </div>
+                <div className='flex flex-row gap-3 items-start'>
+                  <img src={nayBlueTick} alt="" className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                  <p className='text-base md:text-lg'>
+                    <span className='font-bold text-navyBlue'>Citrate:</span> Coagulation studies
+                  </p>
+                </div>
 
-            <div className='flex flex-row gap-3 items-start'>
-              <img src={nayBlueTick} alt="" className="w-5 h-5 mt-0.5 flex-shrink-0" />
-              <p className='text-base md:text-lg'>
-                <span className='font-bold text-navyBlue'>Sputum:</span> Respiratory and infection panels
-              </p>
-            </div>
+                <div className='flex flex-row gap-3 items-start'>
+                  <img src={nayBlueTick} alt="" className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                  <p className='text-base md:text-lg'>
+                    <span className='font-bold text-navyBlue'>Urine (Random/24-hour):</span> Metabolic and renal tests
+                  </p>
+                </div>
 
-            <div className='flex flex-row gap-3 items-start'>
-              <img src={nayBlueTick} alt="" className="w-5 h-5 mt-0.5 flex-shrink-0" />
-              <p className='text-base md:text-lg'>
-                <span className='font-bold text-navyBlue'>Special Samples:</span> As required
-              </p>
-            </div>
-          </div>
+                <div className='flex flex-row gap-3 items-start'>
+                  <img src={nayBlueTick} alt="" className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                  <p className='text-base md:text-lg'>
+                    <span className='font-bold text-navyBlue'>Stool:</span> Gastrointestinal and microbiology
+                  </p>
+                </div>
 
-          {/* image */}
-          <div className='flex-shrink-0'>
-            <img
-              src={checklist}
-              alt="checklist illustration"
-              className='w-64 md:w-80 lg:w-96 h-auto'
-            />
+                <div className='flex flex-row gap-3 items-start'>
+                  <img src={nayBlueTick} alt="" className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                  <p className='text-base md:text-lg'>
+                    <span className='font-bold text-navyBlue'>CSF (Plain Bottle):</span> Neurological studies
+                  </p>
+                </div>
+
+                <div className='flex flex-row gap-3 items-start'>
+                  <img src={nayBlueTick} alt="" className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                  <p className='text-base md:text-lg'>
+                    <span className='font-bold text-navyBlue'>Sputum:</span> Respiratory and infection panels
+                  </p>
+                </div>
+
+                <div className='flex flex-row gap-3 items-start'>
+                  <img src={nayBlueTick} alt="" className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                  <p className='text-base md:text-lg'>
+                    <span className='font-bold text-navyBlue'>Special Samples:</span> As required
+                  </p>
+                </div>
+              </div>
+            </AnimateOnScroll>
+
+            {/* image */}
+            <AnimateOnScroll className='motion-preset-slide-left motion-duration-700 motion-delay-200'>
+              <div className='flex-shrink-0'>
+                <img
+                  src={checklist}
+                  alt="checklist illustration"
+                  className='w-64 md:w-80 lg:w-96 h-auto'
+                />
+              </div>
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
+
+
+
+
+
+
+
 
       {/* how it works section */}
-      <section className={`bg-white flex flex-col ${styles.paddingX} ${styles.paddingY} 
-      justify-center text-center text-deepBlue `}>
-        {/* header */}
-        <div className='mb-12 max-w-4xl mx-auto'>
-          <h2 className={`${styles.heading2} text-navyBlue mb-4`}>HOW IT WORKS</h2>
-          <p className={` ${styles.paragraph} text-gray-700`}>Simple, convenient, and professional</p>
-        </div>
-
-
-        <div className='flex flex-col  sm:flex-row items-center 
-            md:items-start justify-center
-            max-w-6xl mx-auto '>
-            {/* removed gap-8 md:gap-16 to make more responsive  */}
-          {/* image */}
-          <div className='flex-shrink-0'>
-            <img
-              src={person}
-              alt="person illustration"
-              className='w-64 md:w-80 lg:w-96 h-auto'
-            />
-          </div>
-
-          {/* steps card */}
-          <div className='flex flex-col flex-1 border-2 border-skyBlue rounded-2xl shadow-xl p-8 md:p-10 lg:p-12'>
-            
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10'>
-              
-              {/* Step 1 */}
-              <div className='flex flex-col items-center text-center'>
-                <img src={book} alt=""
-              className=' mb-4 w-16 h-16' />
-
-
-                <h3 className='text-lg md:text-xl font-bold mb-2 text-navyBlue'>Book Appointment</h3>
-                <p className='text-sm md:text-base text-gray-700'>Contact us to schedule your test</p>
-              </div>
-
-
-              {/* Step 2 */}
-              <div className='flex flex-col items-center text-center'>
-                <img src={location} alt=""
-              className=' mb-4 w-16 h-16' />
-
-
-                <h3 className='text-lg md:text-xl font-bold mb-2 text-navyBlue'>We Come to You</h3>
-                <p className='text-sm md:text-base text-gray-700'>Our team arrives at your location</p>
-              </div>
-
-
-              {/* Step 3 */}
-              <div className='flex flex-col items-center text-center'>
-                <img src={sample} alt=""
-              className=' mb-4 w-16 h-16' />
-
-
-                <h3 className='text-lg md:text-xl font-bold mb-2 text-navyBlue'>Sample Collection</h3>
-                <p className='text-sm md:text-base text-gray-700'>Quick, safe, and professional</p>
-              </div>
-
-
-              {/* Step 4 */}
-              <div className='flex flex-col items-center text-center'>
-                <img src={results} alt=""
-            className=' mb-4 w-16 h-16' />
-
-
-                <h3 className='text-lg md:text-xl font-bold mb-2 text-navyBlue'>Get Results</h3>
-                <p className='text-sm md:text-base text-gray-700'>Fast turnaround with detailed reports</p>
-              </div>
-
-
+      <section className={`bg-white ${styles.paddingY}`}>
+        <div className={`${styles.paddingX} flex flex-col  justify-center 
+      text-center text-deepBlue max-w-7xl mx-auto ${styles.paddingX}`}>
+          {/* header */}
+          <AnimateOnScroll className='motion-preset-slide-up motion-duration-700'>
+            <div className='mb-12 mx-auto text-center'>
+              <h2 className={`${styles.heading2} text-navyBlue mb-4`}>HOW IT WORKS</h2>
+              <p className={` ${styles.paragraph} text-gray-700`}>Simple, convenient, and professional</p>
             </div>
+          </AnimateOnScroll>
+
+
+          <div className='flex flex-col  sm:flex-row items-center 
+              md:items-start justify-center
+              max-w-6xl mx-auto '>
+              {/* removed gap-8 md:gap-16 to make more responsive  */}
+            {/* image */}
+            <AnimateOnScroll className='motion-preset-slide-right motion-duration-700 motion-delay-200'>
+              <div className='flex-shrink-0'>
+                <img
+                  src={person}
+                  alt="person illustration"
+                  className='w-64 md:w-80 lg:w-96 h-auto'
+                />
+              </div>
+            </AnimateOnScroll>
+
+            {/* steps card */}
+            <AnimateOnScroll className='motion-preset-slide-left motion-duration-700 motion-delay-200'>
+              <div className='flex flex-col flex-1 border-2 border-skyBlue rounded-2xl shadow-xl p-8 md:p-10 lg:p-12'>
+                
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10'>
+                  
+                  {/* Step 1 */}
+                  <div className='flex flex-col items-center text-center'>
+                    <img src={book} alt=""
+                  className=' mb-4 w-16 h-16' />
+
+
+                    <h3 className='text-lg md:text-xl font-bold mb-2 text-navyBlue'>Book Appointment</h3>
+                    <p className='text-sm md:text-base text-gray-700'>Contact us to schedule your test</p>
+                  </div>
+
+
+                  {/* Step 2 */}
+                  <div className='flex flex-col items-center text-center'>
+                    <img src={location} alt=""
+                  className=' mb-4 w-16 h-16' />
+
+
+                    <h3 className='text-lg md:text-xl font-bold mb-2 text-navyBlue'>We Come to You</h3>
+                    <p className='text-sm md:text-base text-gray-700'>Our team arrives at your location</p>
+                  </div>
+
+
+                  {/* Step 3 */}
+                  <div className='flex flex-col items-center text-center'>
+                    <img src={sample} alt=""
+                  className=' mb-4 w-16 h-16' />
+
+
+                    <h3 className='text-lg md:text-xl font-bold mb-2 text-navyBlue'>Sample Collection</h3>
+                    <p className='text-sm md:text-base text-gray-700'>Quick, safe, and professional</p>
+                  </div>
+
+
+                  {/* Step 4 */}
+                  <div className='flex flex-col items-center text-center'>
+                    <img src={results} alt=""
+                className=' mb-4 w-16 h-16' />
+
+
+                    <h3 className='text-lg md:text-xl font-bold mb-2 text-navyBlue'>Get Results</h3>
+                    <p className='text-sm md:text-base text-gray-700'>Fast turnaround with detailed reports</p>
+                  </div>
+
+
+                </div>
+              </div>
+            </AnimateOnScroll>
           </div>
-
-
         </div>
       </section>
+
+
+
+
+
 
 
       {/* call to action section */}
