@@ -1,5 +1,6 @@
 import './index.css'
 import AnimateOnScroll from './components/AnimateOnScroll';
+import ServiceCard from './components/serviceCard.jsx';
 
 
 // hero section
@@ -25,6 +26,8 @@ import chartsIcon from './assets/charts.svg';
 import computerIcon from './assets/computer.svg';
 import tick from './assets/tick.svg';
 import up from './assets/up-icon.svg';
+
+
 
 // footer section
 import clockIcon from './assets/clockIcon.svg';
@@ -124,11 +127,9 @@ export default function App() {
       <section className={`bg-navyBlue py-20 ${styles.paddingY}`}>
         
   
-        <div className='px-16 flex flex-col md:flex-row items-center gap-12 max-w-7xl mx-auto'>
+        <div className={`${styles.paddingX} flex flex-col md:flex-row items-center gap-12 max-w-7xl mx-auto`}>
           {/* {`${styles.paddingX} flex flex-col md:flex-row items-center gap-12 max-w-7xl mx-auto`} */}
 
-          {/* sm:px-8 md:px-16 mx-auto */}
-          
           {/* hero text */}
           {/* Text - slides in smoothly from left */}
           <div className='w-full md:w-1/2 flex flex-col justify-center
@@ -166,41 +167,14 @@ export default function App() {
 
 
 
-      {/* hero section */}
-      {/* <section className={`bg-navyBlue flex flex-col md:flex-row 
-        items-center gap-8 ${styles.section}`}> */}
-        
-        {/* hero text */}
-        {/* <div className='w-full md:w-1/2 flex flex-col justify-center '>
-          <h1 className='text-white font-bold text-3xl lg:text-4xl xl:text-5xl mb-4'>
-            Professional Healthcare, <span className='text-cyan'>Delivered</span> to You
-          </h1>
-          
-          <p className='text-white text-base mb-6'>
-            Comprehensive mobile lab testing and diagnostic services — right at your doorstep.
-          </p>
-          
-          <button className='text-white bg-cyan rounded-full py-3 px-6 font-bold shadow hover:opacity-75 transition-all duration-150 self-start'>
-            Book Your Test Now
-          </button>
-        </div> */}
-
-        {/* hero image */}
-        {/* <div className='w-full md:w-1/2 flex items-center justify-center'>
-          <img 
-            src={heroImage} 
-            className='w-full max-w-md rounded-2xl'
-            alt="Healthcare professional providing medical service to patient" 
-          />
-        </div>
-        
-      </section> */}
+      
 
       {/* why choose us section */}
-      <section className={`bg-white py-20`}>
+      <section className={`bg-white ${styles.paddingY}`}>
 
-        <div className='flex flex-col justify-center text-center 
-        text-deepBlue mb-0 px-16 mx-auto'>
+        <div className={`${styles.paddingX} flex flex-col justify-center text-center text-deepBlue 
+          mb-0  max-w-7xl mx-auto `}>
+
 
         {/* scroll animation */}
 
@@ -208,14 +182,18 @@ export default function App() {
             {/* heading - fades up */}
             <div className='mb-12
             motion-preset-slide-up motion-duration-700 motion-scroll'>
-              <h2 className={`${styles.heading2} text-navyBlue`}>WHY CHOOSE US</h2>
+              <h2 className={`${styles.heading2} text-navyBlue mb-4`}>WHY CHOOSE US</h2>
               <p className={` ${styles.paragraph}`}>Reliable diagnostics. Personalised care. Professional expertise.</p>
             </div>
           </AnimateOnScroll> 
+
+
+
+  
           
 
           {/* cards group */}
-          <div className='flex flex-wrap justify-evenly gap-6 '>
+          <div className='flex flex-wrap justify-evenly  gap-6'>
 
             <AnimateOnScroll className='motion-preset-slide-up motion-duration-700 motion-delay-200'>
               <article className={`${styles.Card} min-w-[280px] max-w-[350px]`}>
@@ -270,54 +248,39 @@ export default function App() {
 
 
       {/* services section */}
-      <section className={`bg-white flex flex-col ${styles.paddingY} ${styles.paddingX}
-      justify-center text-center`}>
-
-        <div className='text-center mb-4 '>
-          <h2 className={`${styles.heading2} text-navyBlue`}>OUR TESTING SERVICES</h2>
-          <p className={`max-w-5xl m-auto justify-center ${styles.paragraph} mb-4`}>Whether you need routine screenings or specialized diagnostics, we bring comprehensive mobile lab testing directly to your location with certified professionals and state-of-the-art equipment.</p>
-        </div>
-
-        {/* card components */}
-        <div className='grid grid-cols-1 md:grid-cols-2 
-        lg:grid-cols-3 gap-6 '>
-
-          {servicesData.map((service) => (
-
-            <div className='bg-white border-2 border-skyBlue
-               rounded-2xl shadow-xl p-6 text-start' key={service.id}>
-              {/* card heading */}
-              <div className='mb-4 border-b-2 border-navyBlue '>
-                <img src={service.icon} alt={`${service.title}`}
-                  width={40} height={40}
-                  className='mb-1.5' />
-                <h3 className='text-xl lg:text-2xl 
-                  font-bold mb-1.5 mt-0 text-navyBlue'>{service.title}</h3>
-                <p className=' mb-2 '>{service.description}</p>
-              </div>
-
-              {/* treatment list */}
-              <ul className='space-y-3 mb-4 border-b-2 border-navyBlue'>
-                {service.treatments.map((treatment, index) => (
-                  <li key={index} className='flex items-start gap-2 mb-2 last:mb-4 '>
-                    <img src={tick} alt="" className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                    <p className='text-sm'>{treatment}</p>
-                  </li>
-                ))}
-              </ul>
-
-              {/* toggle button */}
-              <button className='flex items-center '>
-                <p>See less</p>
-                <img src={up} alt="" className='w-4 h-4 justify-end' />
-              </button>
-
+      <section className={`bg-white ${styles.paddingY}`}>
+      <div className={`${styles.paddingX} flex flex-col justify-center text-center 
+          mb-0  max-w-7xl mx-auto `}>
+      
+          {/* animations */}
+          <AnimateOnScroll className="motion-preset-slide-up motion-duration-700">
+            <div className='text-center mb-12 '>
+              <h2 className={`${styles.heading2} text-navyBlue mb-4`}>OUR TESTING SERVICES</h2>
+              <p className={`max-w-5xl m-auto justify-center ${styles.paragraph} mb-4`}>Whether you need routine screenings or specialized diagnostics, we bring comprehensive mobile lab testing directly to your location with certified professionals and state-of-the-art equipment.</p>
             </div>
+          </AnimateOnScroll>
 
-          ))}
+          
 
+          {/* services grid */}
+          <div className='grid grid-cols-1 md:grid-cols-2 
+            lg:grid-cols-3 gap-6 mb-4 sm:max-w-2xl md:max-w-4xl lg:max-w-7xl mx-auto justify-center'>
+
+            {servicesData.map((service, index) => (
+              <AnimateOnScroll
+                key={service.id}
+                className={`motion-preset-slide-up motion-duration-700 motion-delay-${index * 100}`}
+              >
+                <ServiceCard service={service} tick={tick} />
+              </AnimateOnScroll>
+            ))}
+          </div>
+
+          <p>
+            Note: All tests are conducted by certified professionals with 
+            state-of-the-art equipment
+          </p>
         </div>
-        <p></p>
 
       </section>
 
