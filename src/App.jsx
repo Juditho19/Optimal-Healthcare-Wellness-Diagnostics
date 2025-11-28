@@ -1,7 +1,14 @@
 import './index.css'
 import AnimateOnScroll from './components/AnimateOnScroll';
 import ServiceCard from './components/serviceCard.jsx';
+import scrollToSection from './components/Scroll.jsx';
 
+// navbar
+
+import logo from './assets/logo.svg';
+// import menuIcon from './assets/hamburgerMenu.svg';
+// import closeIcon from "../assets/close.svg";
+import Navbar from "./components/Navbar.jsx";
 
 // hero section
 import heroImageDesktop from './assets/heroImageDesktop.svg';
@@ -120,11 +127,26 @@ export default function App() {
       ]
     }
   ];
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',  // Smooth animation
+        block: 'start'       // Scroll to top of section
+      });
+    }
+    setIsOpen(false); // Close mobile menu after click
+  };
 
   return (
     <>
+      
+      <Navbar />
+      
+
       {/* hero section */}
-      <section className={`bg-navyBlue ${styles.paddingY}`}>
+      <section className={`bg-navyBlue ${styles.paddingY}`}
+      id="home">
         
   
         <div className={`${styles.paddingX} flex flex-col md:flex-row items-center gap-12 max-w-7xl mx-auto`}>
@@ -140,7 +162,8 @@ export default function App() {
             <p className={`text-white ${styles.paragraph} mb-6`}>
               Comprehensive mobile lab testing and diagnostic services — right at your doorstep.
             </p>
-            <button className={`${styles.primaryButton} self-start`}>
+            <button className={`${styles.primaryButton} self-start`}
+            onClick={() => scrollToSection("book-test")}>
               Book Your Test Now
             </button>
           </div>
@@ -166,11 +189,9 @@ export default function App() {
 
 
 
-
-      
-
       {/* why choose us section */}
-      <section className={`bg-white ${styles.paddingY}`}>
+      <section className={`bg-white ${styles.paddingY}`}
+      id="whyChooseUs">
 
         <div className={`${styles.paddingX} flex flex-col justify-center text-center text-deepBlue 
           mb-0  max-w-7xl mx-auto `}>
@@ -187,10 +208,6 @@ export default function App() {
             </div>
           </AnimateOnScroll> 
 
-
-
-  
-          
 
           {/* cards group */}
           <div className='flex flex-wrap justify-evenly  gap-6'>
@@ -231,24 +248,9 @@ export default function App() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       {/* services section */}
-      <section className={`bg-white ${styles.paddingY}`}>
+      <section className={`bg-white ${styles.paddingY}`}
+      id="services">
       <div className={`${styles.paddingX} flex flex-col justify-center text-center 
           mb-0  max-w-7xl mx-auto `}>
       
@@ -259,8 +261,6 @@ export default function App() {
               <p className={`max-w-5xl m-auto justify-center ${styles.paragraph} mb-4`}>Whether you need routine screenings or specialized diagnostics, we bring comprehensive mobile lab testing directly to your location with certified professionals and state-of-the-art equipment.</p>
             </div>
           </AnimateOnScroll>
-          
-
           
 
           {/* services grid */}
@@ -287,17 +287,9 @@ export default function App() {
 
 
 
-
-
-
-
-
-
-
-            
-
       {/* samples section */}
-      <section className={`bg-white ${styles.paddingY} `}>
+      <section className={`bg-white ${styles.paddingY} `}
+      id="samples">
 
         <div className={`flex flex-col justify-center text-center 
           text-deepBlue max-w-7xl mx-auto ${styles.paddingX} `}>
@@ -391,13 +383,9 @@ export default function App() {
 
 
 
-
-
-
-
-
       {/* how it works section */}
-      <section className={`bg-white ${styles.paddingY}`}>
+      <section className={`bg-white ${styles.paddingY}`}
+      id="how-it-works">
         <div className={`${styles.paddingX} flex flex-col  justify-center 
       text-center text-deepBlue max-w-7xl mx-auto ${styles.paddingX}`}>
           {/* header */}
@@ -483,13 +471,9 @@ export default function App() {
 
 
 
-
-
-
-
       {/* call to action section */}
-      <section className={`bg-navyBlue flex flex-col ${styles.paddingX} ${styles.paddingY} justify-center items-center text-center text-white`}>
-        <div className='w-full flex flex-col items-center justify-center max-w-3xl'>
+      <section className={`bg-navyBlue ${styles.paddingY}`}>
+        <div className={`flex flex-col justify-center items-center text-center text-white  ${styles.paddingX}`}>
           <h2 className={`${styles.heading2} mb-4 text-white`}>Ready to Experience Professional Healthcare at Home?</h2>
           <h3 className={`${styles.heading3} mb-6 text-white font-normal`}>Book your mobile lab test today — fast, safe, and convenient.</h3>
           <button className={`${styles.primaryButton}`}>Schedule Your Test Today</button>
@@ -497,21 +481,223 @@ export default function App() {
       </section>
 
       
+      
+      
+
+
 
       {/* book test */}
-      {/* <section className={`bg-white flex flex-col ${styles.paddingX} ${styles.paddingY} 
-      justify-center text-center`}>
-        <h2 className={`${styles.heading2} mb-4`}>Book Your Test</h2>
-        <h3  className={`${styles.heading3}`}>Fast, Simple, and Secure</h3>
+      <section 
+        className={`bg-white flex flex-col ${styles.paddingX} ${styles.paddingY} 
+          justify-center items-center`}
+        id="book-test">
         
-        <form action="">
-
-          <div>
-            <label htmlFor=""></label>
-            <textarea name="" id=""></textarea>
+        {/* Form container with max width */}
+        <div className="w-full max-w-2xl">
+          
+          {/* Heading */}
+          <div className="text-center mb-8">
+            <h2 className={`${styles.heading2} mb-2 text-deepBlue`}>Book Your Test</h2>
+            <p className="text-deepBlue text-base">Fast, Simple, and Secure</p>
           </div>
-        </form>
-      </section> */}
+          
+          <form className="space-y-6">
+            
+            {/* First name and Last name - side by side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex flex-col text-left">
+                <label 
+                  htmlFor="firstName" 
+                  className="text-deepBlue font-medium mb-2 text-sm">
+                  First Name*
+                </label>
+                <input 
+                  type="text" 
+                  id="firstName" 
+                  name="firstName" 
+                  required 
+                  className="border-2 border-cyan rounded-full px-4 py-3 
+                    focus:outline-none focus:border-deepBlue transition-colors"
+                />
+              </div>
+
+              <div className="flex flex-col text-left">
+                <label 
+                  htmlFor="lastName" 
+                  className="text-deepBlue font-medium mb-2 text-sm">
+                  Last Name*
+                </label>
+                <input 
+                  type="text" 
+                  id="lastName" 
+                  name="lastName" 
+                  required 
+                  className="border-2 border-cyan rounded-full px-4 py-3 
+                    focus:outline-none focus:border-deepBlue transition-colors"
+                />
+              </div>
+            </div>
+
+            {/* Email address */}
+            <div className="flex flex-col text-left">
+              <label 
+                htmlFor="email" 
+                className="text-deepBlue font-medium mb-2 text-sm">
+                Email Address*
+              </label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required 
+                className="border-2 border-cyan rounded-full px-4 py-3 
+                  focus:outline-none focus:border-deepBlue transition-colors"
+              />
+            </div>
+
+            {/* Test type dropdown */}
+            <div className="flex flex-col text-left">
+              <label 
+                htmlFor="testType" 
+                className="text-deepBlue font-medium mb-2 text-sm">
+                Test Type*
+              </label>
+              <select 
+                id="testType" 
+                name="testType"
+                required
+                className="border-2 border-cyan rounded-full px-4 py-3 
+                  text-gray-500 bg-white appearance-none
+                  focus:outline-none focus:border-deepBlue transition-colors
+                  bg-[url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%2300B4D8%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e')]
+                  bg-[length:1.25rem] bg-[right_1rem_center] bg-no-repeat pr-12"
+              >
+                <option value="">Please select</option>
+                <option value="basic">Basic Testing</option>
+                <option value="metabolic">Metabolic & Organ Function</option>
+                <option value="advanced">Advanced Testing</option>
+                <option value="infectious">Infectious Disease</option>
+                <option value="specialised">Specialised Screening</option>
+                <option value="imaging">Imaging Services</option>
+              </select>
+            </div>
+
+            {/* Preferred date */}
+            <div className="flex flex-col text-left">
+              <label 
+                htmlFor="preferredDate" 
+                className="text-deepBlue font-medium mb-2 text-sm">
+                Preferred Date*
+              </label>
+              <input 
+                type="date" 
+                id="preferredDate" 
+                name="preferredDate"
+                required 
+                placeholder="Please select"
+                className="border-2 border-cyan rounded-full px-4 py-3 
+                  text-gray-500
+                  focus:outline-none focus:border-deepBlue transition-colors
+                  
+                  bg-[length:1.25rem] bg-[right_1rem_center] bg-no-repeat"
+              />
+            </div>
+
+            {/* Preferred time */}
+            <div className="flex flex-col text-left">
+              <label 
+                htmlFor="preferredTime" 
+                className="text-deepBlue font-medium mb-2 text-sm">
+                Preferred Time*
+              </label>
+              <input 
+                type="time" 
+                id="preferredTime" 
+                name="preferredTime"
+                required 
+                className="border-2 border-cyan rounded-full px-4 py-3 
+                  text-gray-500
+                  focus:outline-none focus:border-deepBlue transition-colors
+                  bg-[url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%2300B4D8%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e')]
+                  bg-[length:1.25rem] bg-[right_1rem_center] bg-no-repeat"
+              />
+            </div>
+
+            {/* Phone number - country code + number */}
+            <div className="flex flex-col text-left">
+              <label 
+                htmlFor="phone" 
+                className="text-deepBlue font-medium mb-2 text-sm">
+                Phone Number
+              </label>
+              <div className="flex gap-2">
+                <select 
+                  id="countryCode" 
+                  name="countryCode"
+                  className="border-2 border-cyan rounded-full px-4 py-3 w-24
+                    bg-white appearance-none
+                    focus:outline-none focus:border-deepBlue transition-colors
+                    bg-[url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%2300B4D8%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e')]
+                    bg-[length:1rem] bg-[right_0.5rem_center] bg-no-repeat pr-8"
+                >
+                  <option value="+1">+1</option>
+                  <option value="+44">+44</option>
+                  <option value="+234">+234</option>
+                </select>
+                
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone"
+                  className="flex-1 border-2 border-cyan rounded-full px-4 py-3 
+                    focus:outline-none focus:border-deepBlue transition-colors"
+                />
+              </div>
+            </div>
+
+            {/* Additional notes */}
+            <div className="flex flex-col text-left">
+              <label 
+                htmlFor="notes" 
+                className="text-deepBlue font-medium mb-2 text-sm">
+                Additional Notes
+              </label>
+              <textarea 
+                id="notes" 
+                name="notes"
+                rows="4"
+                className="border-2 border-cyan rounded-3xl px-4 py-3 
+                  resize-none
+                  focus:outline-none focus:border-deepBlue transition-colors"
+              ></textarea>
+            </div>
+
+            {/* Submit button */}
+            <button 
+              type="submit"
+              className="bg-cyan text-white font-semibold px-8 py-3 
+                rounded-full hover:opacity-90 transition-opacity">
+              Submit
+            </button>
+          </form>
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       {/* footer */}
       

@@ -30,9 +30,9 @@ const ServiceCard = ({ service, tick }) => {
       {isOpen && (
         <ul className="space-y-3 mb-4 border-b-2 border-navyBlue">
           {service.treatments.map((treatment, index) => (
-            <li key={index} className="flex items-start gap-2 mb-2 last:mb-4">
+            <li key={index} className="flex items-start gap-2 mb-2 last:mb-4 ">
               <img src={tick} alt="" className="w-4 h-4 mt-0.5 flex-shrink-0" />
-              <p className="text-sm">{treatment}</p>
+              <p className="text-sm last:mb-2">{treatment}</p>
             </li>
           ))}
         </ul>
@@ -49,7 +49,7 @@ const ServiceCard = ({ service, tick }) => {
           src={upIcon}
           alt=""
           className={`w-4 h-4 transition-transform duration-300 ${
-            isOpen ? "rotate-180" : "rotate-0"
+            isOpen ? "rotate-0" : "rotate-180"
           }`}
         />
       </button>

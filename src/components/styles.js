@@ -1,3 +1,5 @@
+import { link } from "framer-motion/client";
+
 const styles = {
   // Layout
   paddingX: "px-4 sm:px-8 md:px-12 lg:px-16",
@@ -10,7 +12,8 @@ const styles = {
   heading3: "text-xl lg:text-2xl font-bold mb-2 ",
   bodyText: "text-sm md:text-base lg:text-lg",
   paragraph: "text-sm md:text-base lg:text-lg mb-4 font-regular",
-  // text-gray-700
+  link: "text-xs md:text-sm font-bold",
+ 
 
 
   // Buttons
@@ -21,6 +24,9 @@ const styles = {
   
   // Sections
   section: "px-4 sm:px-8 md:px-12 lg:px-16 py-24",
+
+  // booking box
+  bookingBox: "bg-white border-2 border-skyBlue rounded-2xl shadow-xl p-8 w-full max-w-2xl mx-auto",
   
  
 };
