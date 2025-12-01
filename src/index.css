@@ -27,3 +27,49 @@ body{
 p{
    color:  text-gray-700;
 }
+
+
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 25s linear infinite;
+}
+
+.carousel img {
+  width: 100%;
+  max-width: 450px; /* adjust for your layout */
+  height: auto;
+  border-radius: 16px;
+  margin-right: 1.5rem;
+  object-fit: cover;
+}
+
+/* Auto sliding animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+  .carousel img {
+    max-width: 300px;
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel img {
+    max-width: 250px;
+  }
+}

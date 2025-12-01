@@ -1,7 +1,7 @@
 import './index.css'
 import AnimateOnScroll from './components/AnimateOnScroll';
 import ServiceCard from './components/serviceCard.jsx';
-import scrollToSection from './components/Scroll.jsx';
+// import scrollToSection from './components/Scroll.jsx';
 
 // navbar
 
@@ -34,6 +34,12 @@ import computerIcon from './assets/computer.svg';
 import tick from './assets/tick.svg';
 import up from './assets/up-icon.svg';
 
+// picture carousel
+import slide1 from './assets/slide1.jpg';
+import slide2 from './assets/slide2.jpg';
+import slide3 from './assets/slide3.jpg';
+import slide4 from './assets/slide4.jpg';
+import slide5 from './assets/slide5.jpg';
 
 
 // footer section
@@ -244,6 +250,38 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      {/* Picture Carousel */}
+      <section className="carousel">
+        <div className="carousel-track">
+
+          <figure>
+            <img src={slide1} alt="Doctor reviewing test results with a patient" />
+            <figcaption></figcaption>
+          </figure>
+
+          <figure>
+            <img src={slide2} alt="Doctor taking a patient sample" />
+            <figcaption></figcaption>
+          </figure>
+
+          <figure>
+            <img src={slide3} alt="Doctor holding a patient's hands" />
+            <figcaption></figcaption>
+          </figure>
+
+          <figure>
+            <img src={slide4} alt="Doctor typing on a computer next to a stethoscope" />
+            <figcaption></figcaption>
+          </figure>
+
+          <figure>
+            <img src={slide5} alt="Doctor posing with a stethoscope" />
+            <figcaption></figcaption>
+          </figure>
+        </div>
+      </section>
+
 
 
 

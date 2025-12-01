@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import logo from "../assets/logo.svg";
 import menuIcon from "../assets/hamburgerMenu.svg";
 import closeIcon from "../assets/close.svg"; 
-import { style } from "framer-motion/client";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
