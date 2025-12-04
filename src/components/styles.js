@@ -25,10 +25,48 @@ const styles = {
   // Sections
   section: "px-4 sm:px-8 md:px-12 lg:px-16 py-24",
 
-  // booking box
-  bookingBox: "bg-white border-2 border-skyBlue rounded-2xl shadow-xl p-8 w-full max-w-2xl mx-auto",
+  // form
+  inputBase:
+    "border-2 border-cyan rounded-full px-4 py-3 w-full " +
+    "focus:outline-none focus:border-deepBlue transition-colors " +
+    "text-gray-700",
+
+  inputWithIcon:
+    "border-2 border-cyan rounded-full px-4 py-3 w-full " +
+    "focus:outline-none focus:border-deepBlue transition-colors " +
+    "text-gray-700 appearance-none pr-12",
+
+  label:
+    "text-deepBlue font-medium mb-2 text-sm",
+
+  textarea:
+    "border-2 border-cyan rounded-3xl px-4 py-3 resize-none " +
+    "focus:outline-none focus:border-deepBlue transition-colors w-full",
+
   
- 
+  inputBase:
+    "border-2 border-cyan rounded-full px-4 py-3 text-gray-600 focus:outline-none focus:border-deepBlue transition-colors w-full",
+
+  // inputDateTime:
+  //   "border-2 border-cyan rounded-full px-4 py-3 text-gray-600 focus:outline-none focus:border-deepBlue transition-colors w-full appearance-none " +
+  //   "[&::-webkit-calendar-picker-indicator]:filter " +
+  //   "[&::-webkit-calendar-picker-indicator]:invert-[58%] " +
+  //   "[&::-webkit-calendar-picker-indicator]:sepia-[96%] " +
+  //   "[&::-webkit-calendar-picker-indicator]:saturate-[5488%] " +
+  //   "[&::-webkit-calendar-picker-indicator]:hue-rotate-[156deg] " +
+  //   "[&::-webkit-calendar-picker-indicator]:brightness-[96%] " +
+  //   "[&::-webkit-calendar-picker-indicator]:contrast-[101%]"
+
+
+
+  // ...existing
+  inputDateTime:
+    "border-2 border-cyan rounded-full px-4 py-3 text-gray-700 focus:outline-none focus:border-deepBlue transition-colors w-full",
+  // add the indicator rules using Tailwind's arbitrary selector syntax:
+  inputDateTimeIndicator:
+    "[&::-webkit-calendar-picker-indicator]:filter [&::-webkit-calendar-picker-indicator]:invert-[58%] [&::-webkit-calendar-picker-indicator]:sepia-[96%] [&::-webkit-calendar-picker-indicator]:saturate-[5488%] [&::-webkit-calendar-picker-indicator]:hue-rotate-[156deg] [&::-webkit-calendar-picker-indicator]:brightness-[96%] [&::-webkit-calendar-picker-indicator]:contrast-[101%]",
+
+  
 };
 
 export default styles;

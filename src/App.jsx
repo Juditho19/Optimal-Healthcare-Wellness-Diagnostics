@@ -1,6 +1,7 @@
 import './index.css'
 import AnimateOnScroll from './components/AnimateOnScroll';
 import ServiceCard from './components/serviceCard.jsx';
+import countryCodes from "./components/countryCodes";
 // import scrollToSection from './components/Scroll.jsx';
 
 // navbar
@@ -32,7 +33,12 @@ import virusIcon from './assets/virus.svg';
 import chartsIcon from './assets/charts.svg';
 import computerIcon from './assets/computer.svg';
 import tick from './assets/tick.svg';
-import up from './assets/up-icon.svg';
+
+import downIcon from './assets/down-icon.svg';
+import blackDownArrow from './assets/blackDownArrow.svg';
+import calendarIcon from './assets/calendar-icon.svg';
+import clock from './assets/clock-icon.svg';
+
 
 // picture carousel
 import slide1 from './assets/slide1.jpg';
@@ -271,7 +277,7 @@ export default function App() {
           </figure>
 
           <figure>
-            <img src={slide4} alt="Doctor typing on a computer next to a stethoscope" />
+            <img src={slide4} alt="person sitting while using laptop computer and green stethoscope near " />
             <figcaption></figcaption>
           </figure>
 
@@ -518,208 +524,177 @@ export default function App() {
         </div>
       </section>
 
-      
-      
-      
 
-
-
-      {/* book test */}
-      <section 
-        className={`bg-white flex flex-col ${styles.paddingX} ${styles.paddingY} 
-          justify-center items-center`}
+      {/* booking form section */}
+      <section className={`bg-white ${styles.paddingY}`}>
+        <div className={`flex flex-col ${styles.paddingX} justify-center items-center`} 
         id="book-test">
-        
-        {/* Form container with max width */}
-        <div className="w-full max-w-2xl">
-          
-          {/* Heading */}
-          <div className="text-center mb-8">
-            <h2 className={`${styles.heading2} mb-2 text-deepBlue`}>Book Your Test</h2>
-            <p className="text-deepBlue text-base">Fast, Simple, and Secure</p>
-          </div>
-          
-          <form className="space-y-6">
-            
-            {/* First name and Last name - side by side */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="flex flex-col text-left">
-                <label 
-                  htmlFor="firstName" 
-                  className="text-deepBlue font-medium mb-2 text-sm">
-                  First Name*
-                </label>
-                <input 
-                  type="text" 
-                  id="firstName" 
-                  name="firstName" 
-                  required 
-                  className="border-2 border-cyan rounded-full px-4 py-3 
-                    focus:outline-none focus:border-deepBlue transition-colors"
-                />
+
+          <div className="w-full ">
+
+            {/* Heading */}
+            <AnimateOnScroll className='motion-preset-slide-up motion-duration-700'>
+              <div className="text-center mb-8">
+                <h2 className={`${styles.heading2} mb-2 text-deepBlue`}>Book Your Test</h2>
+                <p className="text-deepBlue text-base">Fast, Simple, and Secure</p>
               </div>
+            </AnimateOnScroll>
 
-              <div className="flex flex-col text-left">
-                <label 
-                  htmlFor="lastName" 
-                  className="text-deepBlue font-medium mb-2 text-sm">
-                  Last Name*
-                </label>
-                <input 
-                  type="text" 
-                  id="lastName" 
-                  name="lastName" 
-                  required 
-                  className="border-2 border-cyan rounded-full px-4 py-3 
-                    focus:outline-none focus:border-deepBlue transition-colors"
-                />
-              </div>
-            </div>
+            {/* Form */}
+            <AnimateOnScroll className='motion-preset-slide-up motion-duration-700'>
+              <form className="space-y-6">
 
-            {/* Email address */}
-            <div className="flex flex-col text-left">
-              <label 
-                htmlFor="email" 
-                className="text-deepBlue font-medium mb-2 text-sm">
-                Email Address*
-              </label>
-              <input 
-                type="email" 
-                id="email" 
-                name="email" 
-                required 
-                className="border-2 border-cyan rounded-full px-4 py-3 
-                  focus:outline-none focus:border-deepBlue transition-colors"
-              />
-            </div>
+                {/* First + Last Name */}
+                {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="flex flex-col">
+                    <label className={styles.label}>First Name*</label>
+                    <input type="text" required className={styles.inputBase} />
+                  </div>
 
-            {/* Test type dropdown */}
-            <div className="flex flex-col text-left">
-              <label 
-                htmlFor="testType" 
-                className="text-deepBlue font-medium mb-2 text-sm">
-                Test Type*
-              </label>
-              <select 
-                id="testType" 
-                name="testType"
-                required
-                className="border-2 border-cyan rounded-full px-4 py-3 
-                  text-gray-500 bg-white appearance-none
-                  focus:outline-none focus:border-deepBlue transition-colors
-                  bg-[url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%2300B4D8%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e')]
-                  bg-[length:1.25rem] bg-[right_1rem_center] bg-no-repeat pr-12"
-              >
-                <option value="">Please select</option>
-                <option value="basic">Basic Testing</option>
-                <option value="metabolic">Metabolic & Organ Function</option>
-                <option value="advanced">Advanced Testing</option>
-                <option value="infectious">Infectious Disease</option>
-                <option value="specialised">Specialised Screening</option>
-                <option value="imaging">Imaging Services</option>
-              </select>
-            </div>
+                  <div className="flex flex-col">
+                    <label className={styles.label}>Last Name*</label>
+                    <input type="text" required className={styles.inputBase} />
+                  </div>
+                </div> */}
 
-            {/* Preferred date */}
-            <div className="flex flex-col text-left">
-              <label 
-                htmlFor="preferredDate" 
-                className="text-deepBlue font-medium mb-2 text-sm">
-                Preferred Date*
-              </label>
-              <input 
-                type="date" 
-                id="preferredDate" 
-                name="preferredDate"
-                required 
-                placeholder="Please select"
-                className="border-2 border-cyan rounded-full px-4 py-3 
-                  text-gray-500
-                  focus:outline-none focus:border-deepBlue transition-colors
-                  
-                  bg-[length:1.25rem] bg-[right_1rem_center] bg-no-repeat"
-              />
-            </div>
+                {/* First + Last Name */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="flex flex-col">
+                    <label className={styles.label}>First Name*</label>
+                    <input 
+                      type="text" 
+                      name="firstName"
+                      required 
+                      minLength={2}
+                      maxLength={50}
+                      pattern="[A-Za-z\s\-']+"
+                      title="Please enter a valid name (letters, spaces, hyphens, and apostrophes only)"
+                      className={styles.inputBase}
+                    />
+                  </div>
 
-            {/* Preferred time */}
-            <div className="flex flex-col text-left">
-              <label 
-                htmlFor="preferredTime" 
-                className="text-deepBlue font-medium mb-2 text-sm">
-                Preferred Time*
-              </label>
-              <input 
-                type="time" 
-                id="preferredTime" 
-                name="preferredTime"
-                required 
-                className="border-2 border-cyan rounded-full px-4 py-3 
-                  text-gray-500
-                  focus:outline-none focus:border-deepBlue transition-colors
-                  bg-[url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%2300B4D8%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e')]
-                  bg-[length:1.25rem] bg-[right_1rem_center] bg-no-repeat"
-              />
-            </div>
+                  <div className="flex flex-col">
+                    <label className={styles.label}>Last Name*</label>
+                    <input 
+                      type="text" 
+                      name="lastName"
+                      required 
+                      minLength={2}
+                      maxLength={50}
+                      pattern="[A-Za-z\s\-']+"
+                      title="Please enter a valid name (letters, spaces, hyphens, and apostrophes only)"
+                      className={styles.inputBase}
+                    />
+                  </div>
+                </div>
 
-            {/* Phone number - country code + number */}
-            <div className="flex flex-col text-left">
-              <label 
-                htmlFor="phone" 
-                className="text-deepBlue font-medium mb-2 text-sm">
-                Phone Number
-              </label>
-              <div className="flex gap-2">
-                <select 
-                  id="countryCode" 
-                  name="countryCode"
-                  className="border-2 border-cyan rounded-full px-4 py-3 w-24
-                    bg-white appearance-none
-                    focus:outline-none focus:border-deepBlue transition-colors
-                    bg-[url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%2300B4D8%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e')]
-                    bg-[length:1rem] bg-[right_0.5rem_center] bg-no-repeat pr-8"
+                {/* Email */}
+                <div className="flex flex-col">
+                  <label className={styles.label}>Email Address*</label>
+                  <input type="email" required className={styles.inputBase} />
+                </div>
+
+              
+
+                {/* Test Type Dropdown */}
+                <div className="flex flex-col">
+                  <label className={styles.label}>Test Type*</label>
+
+                  <div className="relative w-full">
+                    <select required className={styles.inputWithIcon}>
+                      <option>Please select</option>
+                      <option value="basic">Basic Testing</option>
+                      <option value="metabolic">Metabolic & Organ Function</option>
+                      <option value="advanced">Advanced Testing</option>
+                      <option value="infectious">Infectious Disease</option>
+                      <option value="specialised">Specialised Screening</option>
+                      <option value="imaging">Imaging Services</option>
+                    </select>
+
+                    <img 
+                      src={blackDownArrow}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 pointer-events-none"
+                    />
+                  </div>
+                </div>
+
+
+                  {/* Date */}
+                  <div className="flex flex-col">
+                    <label className={styles.label}>Preferred Date*</label>
+                    <input 
+                      type="date" 
+                      required 
+                      className={styles.inputDateTime}
+                    />
+                  </div>
+
+                  {/* Time */}
+                  <div className="flex flex-col">
+                    <label className={styles.label}>Preferred Time*</label>
+                    <input 
+                      type="time" 
+                      required 
+                      className={styles.inputDateTime}
+                    />
+                  </div>
+
+
+
+                {/* Phone */}
+                <div className="flex flex-col">
+                  <label className={styles.label}>Phone Number</label>
+
+                  <div className="flex gap-3">
+                    {/* Country code dropdown */}
+                    <div className="relative w-28">
+                      <select className={styles.inputWithIcon}>
+                        <option value=""></option>
+
+                        {countryCodes.map((item, index) => (
+                          <option key={index} value={item.code}>
+                            {item.code} ({item.country})
+                          </option>
+                        ))}
+                      </select>
+
+                      <img 
+                        src={blackDownArrow}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none"
+                      />
+                    </div>
+
+                    <input type="tel" className={`${styles.inputBase} flex-1`} />
+                  </div>
+                </div>
+
+                {/* Notes */}
+                <div className="flex flex-col">
+                  <label className={styles.label}>Additional Notes</label>
+                  <textarea rows="4" className={styles.textarea}></textarea>
+                </div>
+
+                {/* Submit Button */}
+                <button 
+                  type="submit"
+                  className="bg-cyan text-white font-semibold px-8 py-3 
+                  rounded-full hover:opacity-90 transition-opacity w-full md:w-auto"
                 >
-                  <option value="+1">+1</option>
-                  <option value="+44">+44</option>
-                  <option value="+234">+234</option>
-                </select>
-                
-                <input 
-                  type="tel" 
-                  id="phone" 
-                  name="phone"
-                  className="flex-1 border-2 border-cyan rounded-full px-4 py-3 
-                    focus:outline-none focus:border-deepBlue transition-colors"
-                />
-              </div>
-            </div>
+                  Submit
+                </button>
 
-            {/* Additional notes */}
-            <div className="flex flex-col text-left">
-              <label 
-                htmlFor="notes" 
-                className="text-deepBlue font-medium mb-2 text-sm">
-                Additional Notes
-              </label>
-              <textarea 
-                id="notes" 
-                name="notes"
-                rows="4"
-                className="border-2 border-cyan rounded-3xl px-4 py-3 
-                  resize-none
-                  focus:outline-none focus:border-deepBlue transition-colors"
-              ></textarea>
-            </div>
+              </form>
+            </AnimateOnScroll>
 
-            {/* Submit button */}
-            <button 
-              type="submit"
-              className="bg-cyan text-white font-semibold px-8 py-3 
-                rounded-full hover:opacity-90 transition-opacity">
-              Submit
-            </button>
-          </form>
+          </div>
         </div>
       </section>
+
+
+          
+
+
+
 
 
 
