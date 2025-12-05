@@ -54,10 +54,10 @@ export default function Navbar() {
           onClick={() => scrollToSection("samples")}>Samples</li>
           <li className="cursor-pointer hover:text-cyan 
           transition-colors"
-          onClick={() => scrollToSection("howItWorks")}>How it Works</li>
-          <li className="cursor-pointer hover:text-cyan 
+          onClick={() => scrollToSection("how-it-works")}>How it Works</li>
+          {/* <li className="cursor-pointer hover:text-cyan 
           transition-colors"
-          onClick={() => scrollToSection("about")}>About Us</li>
+          onClick={() => scrollToSection("about")}>About Us</li> */}
         </ul>
 
         {/* Desktop Button */}
@@ -97,8 +97,9 @@ export default function Navbar() {
             <li className="cursor-pointer" onClick={() => scrollToSection("home")}>Home</li>
             <li className="cursor-pointer" onClick={() => scrollToSection("services")}>Our Services</li>
             <li className="cursor-pointer" onClick={() => scrollToSection("samples")}>Samples</li>
-            <li className="cursor-pointer" onClick={() => scrollToSection("howItWorks")}>How it Works</li>
-            <li className="cursor-pointer" onClick={() => scrollToSection("about")}>About Us</li>
+            <li className="cursor-pointer" onClick={() => scrollToSection("how-it-works")}>How it Works</li>
+            {/* <li className="cursor-pointer" onClick={() => scrollToSection("about")}>About Us</li> */}
+            {/* include about page later */}
           </ul>
 
           <button 

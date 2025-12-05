@@ -520,7 +520,8 @@ export default function App() {
         <div className={`flex flex-col justify-center items-center text-center text-white  ${styles.paddingX}`}>
           <h2 className={`${styles.heading2} mb-4 text-white`}>Ready to Experience Professional Healthcare at Home?</h2>
           <h3 className={`${styles.heading3} mb-6 text-white font-normal`}>Book your mobile lab test today — fast, safe, and convenient.</h3>
-          <button className={`${styles.primaryButton}`}>Schedule Your Test Today</button>
+          <button className={`${styles.primaryButton}`}
+          onClick={() => scrollToSection("book-test")}>Schedule Your Test Today</button>
         </div>
       </section>
 
@@ -535,7 +536,7 @@ export default function App() {
             {/* Heading */}
             <AnimateOnScroll className='motion-preset-slide-up motion-duration-700'>
               <div className="text-center mb-8">
-                <h2 className={`${styles.heading2} mb-2 text-deepBlue`}>Book Your Test</h2>
+                <h2 className={`${styles.heading2} mb-2 text-navyBlue`}>Book Your Test</h2>
                 <p className="text-deepBlue text-base">Fast, Simple, and Secure</p>
               </div>
             </AnimateOnScroll>
@@ -543,19 +544,6 @@ export default function App() {
             {/* Form */}
             <AnimateOnScroll className='motion-preset-slide-up motion-duration-700'>
               <form className="space-y-6">
-
-                {/* First + Last Name */}
-                {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="flex flex-col">
-                    <label className={styles.label}>First Name*</label>
-                    <input type="text" required className={styles.inputBase} />
-                  </div>
-
-                  <div className="flex flex-col">
-                    <label className={styles.label}>Last Name*</label>
-                    <input type="text" required className={styles.inputBase} />
-                  </div>
-                </div> */}
 
                 {/* First + Last Name */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -581,7 +569,7 @@ export default function App() {
                       required 
                       minLength={2}
                       maxLength={50}
-                      pattern="[A-Za-z\s\-']+"
+                      pattern="^[A-Za-z]+(?:[-'][A-Za-z]+)*$"
                       title="Please enter a valid name (letters, spaces, hyphens, and apostrophes only)"
                       className={styles.inputBase}
                     />
@@ -591,7 +579,13 @@ export default function App() {
                 {/* Email */}
                 <div className="flex flex-col">
                   <label className={styles.label}>Email Address*</label>
-                  <input type="email" required className={styles.inputBase} />
+                  <input 
+                    type="email" 
+                    required
+                    pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
+                    title="Please enter a valid email address"
+                    className={styles.inputBase} 
+                  />
                 </div>
 
               
