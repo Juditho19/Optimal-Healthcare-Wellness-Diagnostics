@@ -1,4 +1,5 @@
 import './index.css'
+import React, {useState} from 'react';
 import AnimateOnScroll from './components/AnimateOnScroll';
 import ServiceCard from './components/serviceCard.jsx';
 import countryCodes from "./components/countryCodes";
@@ -33,6 +34,7 @@ import virusIcon from './assets/virus.svg';
 import chartsIcon from './assets/charts.svg';
 import computerIcon from './assets/computer.svg';
 import tick from './assets/tick.svg';
+import Notepad from './assets/Notepad.svg';
 
 import downIcon from './assets/down-icon.svg';
 import blackDownArrow from './assets/blackDownArrow.svg';
@@ -54,9 +56,17 @@ import mailIcon from './assets/mailIcon.svg';
 import locationIcon from './assets/locationIcon.svg';
 import phonecallIcon from './assets/phonecallIcon.svg';
 
+// form
+import BookingForm from './components/BookingForm.jsx';
+
 import styles from './components/styles.js';
 
 export default function App() {
+
+  const [showModal, setShowModal] = useState(false);
+
+  // const openBooking = () => setShowBooking(true);
+  // const closeBooking = () => setShowBooking(false);
 
   const servicesData = [
     {
@@ -74,16 +84,17 @@ export default function App() {
     },
     {
       id: 2,
-      icon: heartIcon,
-      title: "Metabolic & Organ Function",
-      description: "Comprehensive assessment of your body's core functions",
+      icon: virusIcon,
+      title: "Infectious Disease",
+      description: "Testing and screening for infections and viruses",
       treatments: [
-        "Renal/Comprehensive Metabolic Panel (CMP/BMP)",
-        "Fasting Blood Glucose & HbA1c",
-        "Kidney Function (Creatinine, eGFR, Urinalysis)",
-        "Liver Function (ALT, AST, Albumin, Bilirubin)",
-        "BMP, Fasted Sheath Lancing, Urinalysis"
+        "Hepatitis Panels (HBsAg, HCV, RNA, Hep E IgM)",
+        "Cytomegalovirus (CMV) DNA Testing",
+        "Blood Culture",
+        "Clostridium Difficile (C. difficile)",
+        "Sample types: SST, Blood, Stool"
       ]
+
     },
     {
       id: 3,
@@ -97,36 +108,10 @@ export default function App() {
         "Widal Test (Typhoid)",
         "Sample types: SST, EDTA, CSF"
       ]
+
     },
     {
       id: 4,
-      icon: virusIcon,
-      title: "Infectious Disease",
-      description: "Testing and screening for infections and viruses",
-      treatments: [
-        "Hepatitis Panels (HBsAg, HCV, RNA, Hep E IgM)",
-        "Cytomegalovirus (CMV) DNA Testing",
-        "Blood Culture",
-        "Clostridium Difficile (C. difficile)",
-        "Sample types: SST, Blood, Stool"
-      ]
-    },
-    {
-      id: 5,
-      icon: chartsIcon,
-      title: "Specialised Screening",
-      description: "Targeted testing for complex health conditions",
-      treatments: [
-        "Allergy Testing (Nut Inclusions, Food Allergies)",
-        "Renal Studies (Stone Formation, Calcification)",
-        "ANCA Screening",
-        "Anti-Müllerian Hormone (AMH)",
-        "Neoplagon (Optional) (D-Dimer, V.Antigen)",
-        "Sample types: Various specialized samples"
-      ]
-    },
-    {
-      id: 6,
       icon: computerIcon,
       title: "Imaging Services",
       description: "Professional imaging at your convenience",
@@ -137,6 +122,33 @@ export default function App() {
         "Vascular Health Evaluation",
         "Mobile Ultrasound available for home visits"
       ]
+    },
+    {
+      id: 5,
+      icon: heartIcon,
+      title: "Metabolic & Organ Function",
+      description: "Comprehensive assessment of your body's core functions",
+      treatments: [
+        "Renal/Comprehensive Metabolic Panel (CMP/BMP)",
+        "Fasting Blood Glucose & HbA1c",
+        "Kidney Function (Creatinine, eGFR, Urinalysis)",
+        "Liver Function (ALT, AST, Albumin, Bilirubin)",
+        "BMP, Fasted Sheath Lancing, Urinalysis"
+      ]
+    },
+    {
+      id: 6,
+      icon: chartsIcon,
+      title: "Specialised Screening",
+      description: "Targeted testing for complex health conditions",
+      treatments: [
+        "Allergy Testing (Nut Inclusions, Food Allergies)",
+        "Renal Studies (Stone Formation, Calcification)",
+        "ANCA Screening",
+        "Anti-Müllerian Hormone (AMH)",
+        "Neoplagon (Optional) (D-Dimer, V.Antigen)",
+        "Sample types: Various specialized samples"
+      ]  
     }
   ];
   const scrollToSection = (sectionId) => {
@@ -152,10 +164,9 @@ export default function App() {
 
   return (
     <>
-      
-      <Navbar />
-      
+      <Navbar setShowModal={setShowModal} />
 
+    
       {/* hero section */}
       <section className={`bg-navyBlue ${styles.paddingY}`}
       id="home">
@@ -174,16 +185,22 @@ export default function App() {
             <p className={`text-white ${styles.paragraph} mb-6`}>
               Comprehensive mobile lab testing and diagnostic services — right at your doorstep.
             </p>
-            <button className={`${styles.primaryButton} self-start`}
+            {/* <button className={`${styles.primaryButton} self-start`}
             onClick={() => scrollToSection("book-test")}>
               Book Your Test Now
+            </button> */}
+
+            <button className={`${styles.primaryButton} self-start`}
+            onClick={() => setShowModal(true)}>
+              Book Your Test Now
             </button>
+            
           </div>
 
           {/* hero image */}
           {/* Image - fades in with delay */}
           <div className='w-full md:w-1/2
-          motion-preset-fade motion-duration-1000 motion-delay-300'>
+          motion-preset-fade motion-duration-1000 motion-delay-150'>
             
 
             <picture>
@@ -321,10 +338,13 @@ export default function App() {
             ))}
           </div>
 
-          <p>
-            Note: All tests are conducted by certified professionals with 
-            state-of-the-art equipment
-          </p>
+          <div className='flex flex-row items-center justify-center gap-2'>
+            <img src={Notepad} alt="" />
+            <p>
+              Note: All tests are conducted by certified professionals with 
+              state-of-the-art equipment
+            </p>
+          </div>
         </div>
 
       </section>
@@ -332,7 +352,7 @@ export default function App() {
 
 
       {/* samples section */}
-      <section className={`bg-white ${styles.paddingY} `}
+      <section className={`bg-offWhite ${styles.paddingY} `}
       id="samples">
 
         <div className={`flex flex-col justify-center text-center 
@@ -521,182 +541,12 @@ export default function App() {
           <h2 className={`${styles.heading2} mb-4 text-white`}>Ready to Experience Professional Healthcare at Home?</h2>
           <h3 className={`${styles.heading3} mb-6 text-white font-normal`}>Book your mobile lab test today — fast, safe, and convenient.</h3>
           <button className={`${styles.primaryButton}`}
-          onClick={() => scrollToSection("book-test")}>Schedule Your Test Today</button>
+          onClick={() => setShowModal(true)}>Schedule Your Test Today</button>
         </div>
       </section>
 
 
-      {/* booking form section */}
-      <section className={`bg-white ${styles.paddingY}`}>
-        <div className={`flex flex-col ${styles.paddingX} justify-center items-center`} 
-        id="book-test">
-
-          <div className="w-full ">
-
-            {/* Heading */}
-            <AnimateOnScroll className='motion-preset-slide-up motion-duration-700'>
-              <div className="text-center mb-8">
-                <h2 className={`${styles.heading2} mb-2 text-navyBlue`}>Book Your Test</h2>
-                <p className="text-deepBlue text-base">Fast, Simple, and Secure</p>
-              </div>
-            </AnimateOnScroll>
-
-            {/* Form */}
-            <AnimateOnScroll className='motion-preset-slide-up motion-duration-700'>
-              <form className="space-y-6">
-
-                {/* First + Last Name */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="flex flex-col">
-                    <label className={styles.label}>First Name*</label>
-                    <input 
-                      type="text" 
-                      name="firstName"
-                      required 
-                      minLength={2}
-                      maxLength={50}
-                      pattern="[A-Za-z\s\-']+"
-                      title="Please enter a valid name (letters, spaces, hyphens, and apostrophes only)"
-                      className={styles.inputBase}
-                    />
-                  </div>
-
-                  <div className="flex flex-col">
-                    <label className={styles.label}>Last Name*</label>
-                    <input 
-                      type="text" 
-                      name="lastName"
-                      required 
-                      minLength={2}
-                      maxLength={50}
-                      pattern="^[A-Za-z]+(?:[-'][A-Za-z]+)*$"
-                      title="Please enter a valid name (letters, spaces, hyphens, and apostrophes only)"
-                      className={styles.inputBase}
-                    />
-                  </div>
-                </div>
-
-                {/* Email */}
-                <div className="flex flex-col">
-                  <label className={styles.label}>Email Address*</label>
-                  <input 
-                    type="email" 
-                    required
-                    pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
-                    title="Please enter a valid email address"
-                    className={styles.inputBase} 
-                  />
-                </div>
-
-              
-
-                {/* Test Type Dropdown */}
-                <div className="flex flex-col">
-                  <label className={styles.label}>Test Type*</label>
-
-                  <div className="relative w-full">
-                    <select required className={styles.inputWithIcon}>
-                      <option>Please select</option>
-                      <option value="basic">Basic Testing</option>
-                      <option value="metabolic">Metabolic & Organ Function</option>
-                      <option value="advanced">Advanced Testing</option>
-                      <option value="infectious">Infectious Disease</option>
-                      <option value="specialised">Specialised Screening</option>
-                      <option value="imaging">Imaging Services</option>
-                    </select>
-
-                    <img 
-                      src={blackDownArrow}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 pointer-events-none"
-                    />
-                  </div>
-                </div>
-
-
-                  {/* Date */}
-                  <div className="flex flex-col">
-                    <label className={styles.label}>Preferred Date*</label>
-                    <input 
-                      type="date" 
-                      required 
-                      className={styles.inputDateTime}
-                    />
-                  </div>
-
-                  {/* Time */}
-                  <div className="flex flex-col">
-                    <label className={styles.label}>Preferred Time*</label>
-                    <input 
-                      type="time" 
-                      required 
-                      className={styles.inputDateTime}
-                    />
-                  </div>
-
-
-
-                {/* Phone */}
-                <div className="flex flex-col">
-                  <label className={styles.label}>Phone Number</label>
-
-                  <div className="flex gap-3">
-                    {/* Country code dropdown */}
-                    <div className="relative w-28">
-                      <select className={styles.inputWithIcon}>
-                        <option value=""></option>
-
-                        {countryCodes.map((item, index) => (
-                          <option key={index} value={item.code}>
-                            {item.code} ({item.country})
-                          </option>
-                        ))}
-                      </select>
-
-                      <img 
-                        src={blackDownArrow}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none"
-                      />
-                    </div>
-
-                    <input type="tel" className={`${styles.inputBase} flex-1`} />
-                  </div>
-                </div>
-
-                {/* Notes */}
-                <div className="flex flex-col">
-                  <label className={styles.label}>Additional Notes</label>
-                  <textarea rows="4" className={styles.textarea}></textarea>
-                </div>
-
-                {/* Submit Button */}
-                <button 
-                  type="submit"
-                  className="bg-cyan text-white font-semibold px-8 py-3 
-                  rounded-full hover:opacity-90 transition-opacity w-full md:w-auto"
-                >
-                  Submit
-                </button>
-
-              </form>
-            </AnimateOnScroll>
-
-          </div>
-        </div>
-      </section>
-
-
-          
-
-
-
-
-
-
-
-
-
-
-
+      
 
 
 
@@ -798,6 +648,8 @@ export default function App() {
         </div>
 
       </section>
+
+      <BookingForm showModal={showModal} setShowModal={setShowModal} />
 
 
     </>

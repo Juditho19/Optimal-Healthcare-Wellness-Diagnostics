@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import logo from "../assets/logo.svg";
 import menuIcon from "../assets/hamburgerMenu.svg";
-import closeIcon from "../assets/close.svg"; 
+import closeIcon from "../assets/close.svg";
+import styles from '../components/styles.js'; 
+import BookingForm from "./BookingForm.jsx";
 
-export default function Navbar() {
+export default function Navbar({ setShowModal }) {
   const [isOpen, setIsOpen] = useState(false);
 
   // Prevent body scroll when menu is open
@@ -35,6 +37,9 @@ export default function Navbar() {
   return (
     <header className="bg-skyBlue relative z-50">
       <nav className="flex items-center justify-between py-4 px-6 md:px-12">
+      {/* <nav className={`flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-16 `}> */}
+        {/* {`bg-navyBlue ${styles.paddingY}`} */}
+        {/* px-4 sm:px-8 md:px-12 lg:px-16 */}
         
         {/* Logo */}
         <img src={logo} alt="logo" className="w-12 h-12" />
@@ -42,7 +47,7 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <ul className={`hidden md:flex flex-row gap-8 
           absolute left-1/2 transform -translate-x-1/2 
-          text-navyBlue font-medium text-sm`}>
+          text-navyBlue font-medium text-base`}>
           <li className="cursor-pointer hover:text-cyan 
           transition-colors"
           onClick={() => scrollToSection("home")}>Home</li>
@@ -61,10 +66,16 @@ export default function Navbar() {
         </ul>
 
         {/* Desktop Button */}
+        {/* <button className="hidden md:block bg-navyBlue 
+        text-white px-6 py-2 rounded-full font-semibold 
+        hover:opacity-90 transition-opacity text-sm "
+        onClick={() => scrollToSection("book-test")}>
+          Contact Us
+        </button> */}
         <button className="hidden md:block bg-navyBlue 
         text-white px-6 py-2 rounded-full font-semibold 
-        hover:opacity-90 transition-opacity"
-        onClick={() => scrollToSection("book-test")}>
+        hover:opacity-90 transition-opacity text-sm "
+        onClick={() => setShowModal(true)}>
           Contact Us
         </button>
 
@@ -102,12 +113,19 @@ export default function Navbar() {
             {/* include about page later */}
           </ul>
 
-          <button 
+          {/* <button 
             className="mt-6 w-full bg-navyBlue text-white py-3 rounded-full font-semibold"
             onClick={() => scrollToSection("book-test")}
           >
             Contact Us
+          </button> */}
+
+          <button 
+            className="mt-6 w-full bg-navyBlue text-white py-3 rounded-full font-semibold"
+            onClick={() => setShowModal(true)}>
+            Contact Us
           </button>
+
         </div>
       )}
     </header>

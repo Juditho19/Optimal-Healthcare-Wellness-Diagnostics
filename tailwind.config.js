@@ -11,6 +11,7 @@ export default {
         skyBlue: 'var(--skyBlue)',
         cyan: 'var(--cyan)',
         deepBlue: 'var(--deepBlue)',
+        offWhite: 'var(--offWhite)',
     }
     },
   },
