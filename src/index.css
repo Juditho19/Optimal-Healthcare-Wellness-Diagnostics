@@ -8,6 +8,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 img{
@@ -41,6 +43,7 @@ p{
   width: 100%;
   overflow: hidden;
   margin: 2rem 0;
+
 }
 
 .carousel-track {
@@ -51,7 +54,7 @@ p{
 
 .carousel img {
   width: 100%;
-  max-width: 450px; /* adjust for your layout */
+  max-width: 450px; 
   height: auto;
   border-radius: 16px;
   margin-right: 1.5rem;

@@ -6,6 +6,9 @@ import close from '../assets/Close1.svg';
 
 const BookingForm = ({ showModal, setShowModal }) => {
   
+  // ✅ ALL HOOKS MUST BE AT THE TOP - BEFORE ANY RETURNS OR CONDITIONS
+  const [result, setResult] = useState("");  // ← Moved to the top!
+  
   // Lock scroll when modal is open
   useEffect(() => {
     if (showModal) {
@@ -36,16 +39,35 @@ const BookingForm = ({ showModal, setShowModal }) => {
     };
   }, [showModal, setShowModal]);
 
-  // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Add your form submission logic here
-    console.log('Form submitted');
+  // Handle form submission with Web3Forms
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending...");  // Show loading state
     
-    // Close modal after submission (or show success message first)
-    setTimeout(() => {
-      setShowModal(false);
-    }, 1000);
+    const formData = new FormData(event.target);
+    formData.append("access_key", "be629664-8e23-4e77-87e5-d5ea69f32734");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+      
+      if (data.success) {
+        setResult("Form submitted successfully!");
+        // Close modal after 2 seconds
+        setTimeout(() => {
+          setShowModal(false);
+          setResult("");  // Reset result
+        }, 2000);
+      } else {
+        setResult("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setResult("Error submitting form. Please try again.");
+    }
   };
 
   // Close modal when clicking outside
@@ -55,6 +77,7 @@ const BookingForm = ({ showModal, setShowModal }) => {
     }
   };
 
+  // ✅ EARLY RETURN COMES AFTER ALL HOOKS
   if (!showModal) return null;
 
   return (
@@ -64,7 +87,7 @@ const BookingForm = ({ showModal, setShowModal }) => {
     >
       {/* Modal Container */}
       <div 
-        className="bg-white rounded-3xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto relative
+        className="bg-white  shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto relative
           motion-preset-fade motion-duration-300"
         onClick={(e) => e.stopPropagation()}
       >
@@ -87,7 +110,7 @@ const BookingForm = ({ showModal, setShowModal }) => {
           </div>
 
           {/* Form */}
-          <form className="space-y-6" onSubmit={handleSubmit}>
+          <form className="space-y-6" onSubmit={onSubmit}>
 
             {/* First + Last Name */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -234,6 +257,17 @@ const BookingForm = ({ showModal, setShowModal }) => {
             >
               Submit
             </button>
+
+            {/* Result Message */}
+            {result && (
+              <p className={`text-center font-medium ${
+                result.includes('success') ? 'text-green-600' : 
+                result.includes('Error') ? 'text-red-600' : 
+                'text-blue-600'
+              }`}>
+                {result}
+              </p>
+            )}
 
           </form>
 

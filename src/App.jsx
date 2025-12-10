@@ -302,6 +302,39 @@ export default function App() {
             <img src={slide5} alt="Doctor posing with a stethoscope" />
             <figcaption></figcaption>
           </figure>
+
+
+
+
+
+
+
+
+
+          <figure>
+            <img src={slide1} alt="Doctor reviewing test results with a patient" />
+            <figcaption></figcaption>
+          </figure>
+
+          <figure>
+            <img src={slide2} alt="Doctor taking a patient sample" />
+            <figcaption></figcaption>
+          </figure>
+
+          <figure>
+            <img src={slide3} alt="Doctor holding a patient's hands" />
+            <figcaption></figcaption>
+          </figure>
+
+          <figure>
+            <img src={slide4} alt="person sitting while using laptop computer and green stethoscope near " />
+            <figcaption></figcaption>
+          </figure>
+
+          <figure>
+            <img src={slide5} alt="Doctor posing with a stethoscope" />
+            <figcaption></figcaption>
+          </figure>
         </div>
       </section>
 
@@ -339,9 +372,10 @@ export default function App() {
           </div>
 
           <div className='flex flex-row items-center justify-center gap-2'>
-            <img src={Notepad} alt="" />
+            {/* <img src={Notepad} alt="" /> */}
+            {/* image didn't align properly */}
             <p>
-              Note: All tests are conducted by certified professionals with 
+              <span className='text-red-600'>Note:</span> All tests are conducted by certified professionals with 
               state-of-the-art equipment
             </p>
           </div>
@@ -561,10 +595,10 @@ export default function App() {
       <section className={`bg-deepBlue flex flex-col ${styles.paddingX} ${styles.paddingY} justify-center text-white`}>
         
         {/* header */}
-        <div className='mb-8 text-center'>
+        {/* <div className='mb-8 text-center'>
           <h2 className='text-2xl md:text-3xl font-bold text-skyBlue mb-2'>Optimal Healthcare Wellness & Diagnostics</h2>
           <p className='text-sm md:text-base text-white/80 italic'>Your health & wellness matters...</p>
-        </div>
+        </div> */}
 
         {/* footer content - flex layout */}
         <div className='flex flex-row flex-wrap lg:flex-nowrap justify-between gap-8 lg:gap-12 mb-8 max-w-7xl mx-auto w-full text-left md:text-left'>
